@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/landing/logo.png" alt="HyperClaw-Max" width="600"/>
+
 # ⚡ HYPERCLAW-MAX ⚡
 
 ```
@@ -49,6 +51,12 @@ HyperClaw-Max is a distro for people who want:
 
 Think of it as **hiring a small autonomous company** — not just prompting a bot.
 
+<div align="center">
+
+<img src="assets/landing/architecture-simple.jpg" alt="HyperClaw-Max overview" width="800"/>
+
+</div>
+
 ---
 
 ## ⚡ Quick Start — 2 Minutes
@@ -76,6 +84,12 @@ PYTHONPATH=src python3 -m hyperclaw_max.context_intel.pack "telegram inbound ded
 ---
 
 ## 🧠 Architecture — The Brain
+
+<div align="center">
+
+<img src="assets/landing/architecture.jpg" alt="HyperClaw-Max layered architecture" width="900"/>
+
+</div>
 
 ```mermaid
 graph TB
@@ -347,8 +361,8 @@ graph LR
 | [CLI.md](docs/CLI.md) | Command reference |
 | [ROADMAP.md](docs/ROADMAP.md) | What's next |
 | [PACK-MANIFEST.yaml](agents/PACK-MANIFEST.yaml) | Agent definitions |
-| [Building the Brain A Guide to the HyperClaw-Max 5-Tier Memory Fabric.md](Building%20the%20Brain%20A%20Guide%20to%20the%20HyperClaw-Max%205-Tier%20Memory%20Fabric.md) | Long-form memory fabric narrative |
-| [Implementation Blueprint.md](Implementation%20Blueprint.md) | Long-form deployment and operating model |
+| [building-the-brain.md](docs/vision/building-the-brain.md) | Long-form memory fabric narrative |
+| [implementation-blueprint.md](docs/vision/implementation-blueprint.md) | Long-form deployment and operating model |
 
 ---
 
