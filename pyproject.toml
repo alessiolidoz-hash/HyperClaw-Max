@@ -14,6 +14,8 @@ authors = [
 dependencies = []
 
 [project.scripts]
+hyperclaw-doctor = "hyperclaw_max.doctor:main"
+hyperclaw-privacy-check = "hyperclaw_max.privacy_check:main"
 hyperclaw-symbol-slice = "hyperclaw_max.context_intel.symbol_slice:main"
 hyperclaw-feedback-store = "hyperclaw_max.context_intel.feedback_store:main"
 hyperclaw-context-pack = "hyperclaw_max.context_intel.pack:main"

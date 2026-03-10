@@ -1,0 +1,231 @@
+{
+  "contract_version": "v2",
+  "generated_at": "2026-03-10T13:11:37Z",
+  "problem": {
+    "query": "telegram inbound dedupe session scope",
+    "keywords": [
+      "telegram",
+      "inbound",
+      "dedupe",
+      "scope"
+    ],
+    "repo": "/workspace/HyperClaw-Max",
+    "mode": "technical-pack",
+    "query_signature": "a0b1ab33ce22a931"
+  },
+  "metrics": {
+    "local_candidate_count": 5,
+    "repo_intel_candidate_count": 0,
+    "approx_chars": 4863,
+    "approx_tokens": 1215,
+    "budget_profile": "standard",
+    "budget_limit": 5,
+    "budget_max_chars": 9000,
+    "citation_count": 4,
+    "feedback_mode": "off",
+    "symbol_slicing_mode": "off",
+    "repo_intel_latency_ms": 0
+  },
+  "git_context": {
+    "repo": "/workspace/HyperClaw-Max",
+    "branch": null,
+    "dirty_count": 0,
+    "dirty_files": [],
+    "diffstat": []
+  },
+  "local_candidates": [
+    {
+      "path": "/workspace/HyperClaw-Max/src/hyperclaw_max/context_intel/feedback_store.py",
+      "rel_path": "src/hyperclaw_max/context_intel/feedback_store.py",
+      "base_score": 5,
+      "feedback_delta": 0,
+      "final_score": 5,
+      "score": 5,
+      "reasons": [
+        "text-match:dedupe",
+        "source-boost"
+      ],
+      "feedback_reasons": [],
+      "matched_keywords": [
+        "dedupe"
+      ],
+      "snippets": [
+        {
+          "line": 62,
+          "text": "dedupe_key = ("
+        },
+        {
+          "line": 71,
+          "text": "if dedupe_key in bucket[\"seen_keys\"]:"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/HyperClaw-Max/src/hyperclaw_max/context_intel/clinic.py",
+      "rel_path": "src/hyperclaw_max/context_intel/clinic.py",
+      "base_score": 5,
+      "feedback_delta": 0,
+      "final_score": 5,
+      "score": 5,
+      "reasons": [
+        "text-match:scope",
+        "source-boost"
+      ],
+      "feedback_reasons": [],
+      "matched_keywords": [
+        "scope"
+      ],
+      "snippets": [
+        {
+          "line": 59,
+          "text": "category=\"gateway_operator_scope\","
+        },
+        {
+          "line": 62,
+          "text": "summary=\"Gateway operator.read scope failure\","
+        }
+      ]
+    },
+    {
+      "path": "/workspace/HyperClaw-Max/README.md",
+      "rel_path": "README.md",
+      "base_score": 4,
+      "feedback_delta": 0,
+      "final_score": 4,
+      "score": 4,
+      "reasons": [
+        "text-match:telegram,inbound,dedupe,scope",
+        "docs-deboost"
+      ],
+      "feedback_reasons": [],
+      "matched_keywords": [
+        "telegram",
+        "inbound",
+        "dedupe",
+        "scope"
+      ],
+      "snippets": [
+        {
+          "line": 105,
+          "text": "- Telegram as first real connector"
+        },
+        {
+          "line": 192,
+          "text": "PYTHONPATH=src python3 -m hyperclaw_max.context_intel.pack \"telegram inbound dedupe session scope\" --repo . --format human"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/HyperClaw-Max/config/openclaw.public.example.jsonc",
+      "rel_path": "config/openclaw.public.example.jsonc",
+      "base_score": 3,
+      "feedback_delta": 0,
+      "final_score": 3,
+      "score": 3,
+      "reasons": [
+        "text-match:telegram"
+      ],
+      "feedback_reasons": [],
+      "matched_keywords": [
+        "telegram"
+      ],
+      "snippets": [
+        {
+          "line": 59,
+          "text": "\"telegram\": {"
+        },
+        {
+          "line": 63,
+          "text": "\"botToken\": \"${TELEGRAM_BOT_TOKEN}\","
+        }
+      ]
+    },
+    {
+      "path": "/workspace/HyperClaw-Max/install/ONBOARDING.md",
+      "rel_path": "install/ONBOARDING.md",
+      "base_score": 1,
+      "feedback_delta": 0,
+      "final_score": 1,
+      "score": 1,
+      "reasons": [
+        "text-match:telegram",
+        "docs-deboost"
+      ],
+      "feedback_reasons": [],
+      "matched_keywords": [
+        "telegram"
+      ],
+      "snippets": [
+        {
+          "line": 17,
+          "text": "- Telegram bot token"
+        },
+        {
+          "line": 42,
+          "text": "- Telegram delivery smoke"
+        }
+      ]
+    }
+  ],
+  "repo_intel_candidates": [],
+  "compare_assessment": {
+    "status": "adapter_not_configured",
+    "rationale": "No repo-intelligence adapter configured; local candidates only.",
+    "repo_intel_candidate_count": 0
+  },
+  "citations": [
+    {
+      "citation_id": "L1",
+      "source_kind": "local",
+      "label": "src/hyperclaw_max/context_intel/feedback_store.py",
+      "locator": "src/hyperclaw_max/context_intel/feedback_store.py:62",
+      "reason": "text-match:dedupe,source-boost",
+      "evidence": "dedupe_key = ("
+    },
+    {
+      "citation_id": "L2",
+      "source_kind": "local",
+      "label": "src/hyperclaw_max/context_intel/clinic.py",
+      "locator": "src/hyperclaw_max/context_intel/clinic.py:59",
+      "reason": "text-match:scope,source-boost",
+      "evidence": "category=\"gateway_operator_scope\","
+    },
+    {
+      "citation_id": "L3",
+      "source_kind": "local",
+      "label": "README.md",
+      "locator": "README.md:105",
+      "reason": "text-match:telegram,inbound,dedupe,scope,docs-deboost",
+      "evidence": "- Telegram as first real connector"
+    },
+    {
+      "citation_id": "L4",
+      "source_kind": "local",
+      "label": "config/openclaw.public.example.jsonc",
+      "locator": "config/openclaw.public.example.jsonc:59",
+      "reason": "text-match:telegram",
+      "evidence": "\"telegram\": {"
+    }
+  ],
+  "next_actions": [
+    "inspect local candidate `src/hyperclaw_max/context_intel/feedback_store.py` first"
+  ],
+  "provenance": {
+    "query_fusion": {
+      "engine": "hyperclaw_max_context_pack",
+      "mode": "local-search",
+      "metadata": {
+        "search_backend": "rg-or-fallback"
+      }
+    },
+    "compare_mode": {
+      "engine": "repo_intel_adapter",
+      "status": "adapter_not_configured",
+      "command": null
+    },
+    "feedback": {
+      "mode": "off",
+      "log": "/workspace/HyperClaw-Max/artifacts/context_intel/feedback-events-v1.jsonl"
+    }
+  }
+}

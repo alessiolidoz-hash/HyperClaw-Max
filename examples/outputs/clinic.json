@@ -1,0 +1,16 @@
+{
+  "category": "gateway_memory_drift",
+  "severity": "high",
+  "routes": [
+    "codex",
+    "hk"
+  ],
+  "summary": "Gateway memory sync drift or embedding provider mismatch",
+  "probable_cause": "The memory subsystem is invoking the wrong embedding provider or an older path is bypassing local embedding configuration.",
+  "next_step": "Verify the active provider, then inspect the path that still points at a remote embedding flow.",
+  "query_seed": "gateway memory sync drift openai embeddings failed 401 provider local embeddinggemma",
+  "matched_regexes": [
+    "openai embeddings failed: 401",
+    "memory sync failed"
+  ]
+}

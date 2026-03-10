@@ -1,0 +1,9 @@
+{
+  "repo": "/workspace/HyperClaw-Max",
+  "ok": true,
+  "findings": {
+    "google_api_key": [],
+    "github_pat": [],
+    "openai_key": []
+  }
+}

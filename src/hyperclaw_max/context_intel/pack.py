@@ -162,12 +162,18 @@ def build_local_candidates(query: str, repo: Path, git_meta: dict[str, Any], hit
         if dirty_status:
             score += 2
             reasons.append(f"dirty:{dirty_status}")
+        if rel_path.startswith("src/"):
+            score += 2
+            reasons.append("source-boost")
         if rel_path.endswith((".service", ".timer", ".sh")):
             score += 1
             reasons.append("ops-surface")
-        if rel_path.endswith((".md", ".json", ".jsonl")):
+        if rel_path.endswith(".md"):
+            score -= 2
+            reasons.append("docs-deboost")
+        elif rel_path.endswith((".json", ".jsonl")):
             score -= 1
-            reasons.append("non-code-deboost")
+            reasons.append("data-deboost")
         candidates.append(
             {
                 "path": str(Path(path).resolve()),

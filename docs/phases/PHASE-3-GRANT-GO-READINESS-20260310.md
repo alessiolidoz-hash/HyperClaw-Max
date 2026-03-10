@@ -24,6 +24,8 @@ HyperClaw-Max now has:
 - a default persistent-agent pack
 - hosting and dependency guidance
 - privacy and secret boundaries
+- trust docs and repo hygiene surfaces
+- CI and generated example outputs
 - a separate private GitHub repo
 - real extracted code
 - tests and synthetic fixtures
@@ -40,6 +42,8 @@ Current positive checks:
 - no obvious live secrets found in the latest targeted scan
 - core extracted tests pass
 - scorecard runs
+- doctor passes
+- privacy check passes
 - private repo exists and is being updated in parallel
 
 ## Remaining Gaps

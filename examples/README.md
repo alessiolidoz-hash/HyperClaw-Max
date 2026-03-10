@@ -1,7 +1,9 @@
 # Examples
 
-This directory will hold:
-- example configs
-- example onboarding scenarios
-- example repo-intelligence usage
-- example memory queries across tiers
+This directory now holds:
+- quickstart examples
+- generated output samples
+
+Current intent:
+- let a reviewer understand what the current extracted core already does
+- make the repo feel runnable, not just conceptual

@@ -1,0 +1,58 @@
+{
+  "repo": "/workspace/HyperClaw-Max",
+  "python": "3.12.3",
+  "platform": "Linux-6.8.0-100-generic-aarch64-with-glibc2.39",
+  "required_files": [
+    {
+      "path": "README.md",
+      "status": "ok"
+    },
+    {
+      "path": "pyproject.toml",
+      "status": "ok"
+    },
+    {
+      "path": "src/hyperclaw_max/context_intel/pack.py",
+      "status": "ok"
+    },
+    {
+      "path": "src/hyperclaw_max/context_intel/clinic.py",
+      "status": "ok"
+    },
+    {
+      "path": "fixtures/context_intel/canonical-cases-v1.jsonl",
+      "status": "ok"
+    },
+    {
+      "path": "tests/test_pack.py",
+      "status": "ok"
+    }
+  ],
+  "required_tools": [
+    {
+      "tool": "git",
+      "status": "ok"
+    },
+    {
+      "tool": "bash",
+      "status": "ok"
+    },
+    {
+      "tool": "rg",
+      "status": "ok"
+    }
+  ],
+  "optional_tools": [
+    {
+      "tool": "gh",
+      "status": "ok"
+    },
+    {
+      "tool": "node",
+      "status": "ok"
+    }
+  ],
+  "ok": true,
+  "missing_required_files": [],
+  "missing_required_tools": []
+}

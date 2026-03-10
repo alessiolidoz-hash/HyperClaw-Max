@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: HyperClaw-Max
+message: "If you use HyperClaw-Max, please cite the repository."
+type: software
+authors:
+  - family-names: Lidozzi
+    given-names: Alessio
+repository-code: "https://github.com/alessiolidoz-hash/HyperClaw-Max"
+license: MIT
