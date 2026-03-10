@@ -206,6 +206,13 @@ graph LR
 
 **The moat:** Different questions hit different memory surfaces. That's the product advantage.
 
+**Reference stack in the private system today:**
+- **Tier 1:** SQLite FTS5 + **EmbeddingGemma 300M**
+- **Tier 2:** **FalkorDB** relationship graph
+- **Tier 3:** **TwinMind / Graphiti** timeline layer
+- **Tier 4:** **Ars Contexta** synthesis layer
+- **Tier 5:** optional repo-intelligence and upstream advisory
+
 ---
 
 ### 3️⃣ Operational Fabric
@@ -252,6 +259,12 @@ graph LR
 - When to use cloud (complexity, quality)
 - When to use local (cost, privacy, latency)
 - When to route hybrid (best of both)
+
+**Reference routing stack in the private system:**
+- strong cloud models for hard reasoning
+- local endpoints for privacy and cost control
+- local **EmbeddingGemma** for Tier 1 recall
+- local and hybrid lanes for deeper indexing and memory maintenance
 
 ---
 
@@ -356,6 +369,15 @@ Recommended early shape:
 - one default persistent pack
 - one baseline memory core
 
+**Reference deployment already proven in the private system:**
+- **Hetzner CAX31**
+- **ARM64 Ampere Altra**
+- **8 vCPU**
+- **16 GB RAM**
+- **160 GB disk**
+- **systemd user services**
+- **Tailscale-first private boundary**
+
 This is why the repo keeps talking about **local-first**:
 - your data stays close
 - your operations stay inspectable
@@ -372,6 +394,14 @@ The integration logic is simple:
 - **Cloud models** give strong performance when the task is hard
 - **Local models** give privacy, cost control, and autonomy
 - **Repo intelligence** gives a structured way to compare and import ideas
+- **Cartesia + Ink** give the voice and call surface
+
+**Reference voice stack in the private system today:**
+- **Cartesia Sonic 3** for TTS
+- **Cartesia Line** for browser/PWA voice calls
+- **Ink STT** in the voice-call path
+- `voice-broker`, `voice-line-agent`, and `voice-web` as dedicated services
+- `rtc-gateway-proxy` as an extra real-time surface
 
 Each one exists because it solves a specific operational problem, not because it is trendy.
 
@@ -549,6 +579,11 @@ What is already planned or actively being explored:
 That last one is not marketing fluff.
 It is a real direction for the product shape.
 
+**Reference reality today:**
+- a first private **Doctor** tranche already exists in the system of origin
+- it has dedicated workspace, scripts, skills, and strict medical evidence handling
+- the public distro does not ship that lane yet, but the direction is real
+
 ---
 
 ## ❓ FAQ
@@ -591,6 +626,25 @@ That proof now exists:
 - sanity checks
 - privacy boundary
 - install direction
+
+### Is the Doctor lane real or just roadmap fluff?
+
+It is real in the reference system and future-facing in the public distro.
+
+What exists already in the private system:
+- a dedicated Doctor workspace
+- dedicated Doctor tools and skills
+- evidence-first strict mode
+- a private medical substrate
+
+What does not exist yet in public core:
+- a full public-safe Doctor pack
+- public-safe medical examples
+- install-ready medical overlays
+
+So the direction is real.
+It is simply not part of the base public distro yet.
+
 ## 💰 Why A Grant Would Help
 
 **HyperClaw-Max doesn't need a grant to exist.** It needs a grant to **accelerate**.
@@ -642,4 +696,3 @@ We welcome contributions! See:
 </div>
 
 ---
-
