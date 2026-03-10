@@ -4,22 +4,6 @@
 
 # ⚡ HYPERCLAW-MAX ⚡
 
-```
-    ██╗  ██╗██╗   ██╗██████╗ ██╗██████╗  █████╗ ██╗    ██╗██╗     ███████╗██████╗ 
-    ██║  ██║██║   ██║██╔══██╗██║██╔══██╗██╔══██╗██║    ██║██║     ██╔════╝██╔══██╗
-    ███████║██║   ██║██████╔╝██║██████╔╝███████║██║ █╗ ██║██║     █████╗  ██████╔╝
-    ██╔══██║██║   ██║██╔══██╗██║██╔══██╗██╔══██║██║███╗██║██║     ██╔══╝  ██╔══██╗
-    ██║  ██║╚██████╔╝██████╔╝██║██║  ██║██║  ██║╚███╔███╔╝███████╗███████╗██║  ██║
-    ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝╚══════╝╚═╝  ╚═╝
-                                                                                   
-    ███╗   ███╗ █████╗  ██████╗ ██╗  ██╗██╗   ██╗ █████╗ ██╗   ██╗   ██╗
-    ████╗ ████║██╔══██╗██╔════╝ ██║  ██║██║   ██║██╔══██╗██║   ██║   ██║
-    ██╔████╔██║███████║██║  ███╗███████║██║   ██║███████║██║   ██║   ██║
-    ██║╚██╔╝██║██╔══██║██║   ██║██╔══██║██║   ██║██╔══██║██║   ╚██╗ ██╔╝
-    ██║ ╚═╝ ██║██║  ██║╚██████╔╝██║  ██║╚██████╔╝██║  ██║███████╗╚████╔╝ 
-    ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚═══╝  
-```
-
 ### 🚀 A Local-First Autonomous Company in a Box
 
 **One server. One private network. Persistent agents. Deep memory. Surgical operations.**
@@ -143,6 +127,30 @@ graph TB
 | **Specialists** | Execution | CODEX (code), PA (routing), HK (maintenance), FINANCE/LEGAL (domain) |
 | **Operational Fabric** | State & Flow | Tasks, delegations, watchdogs, observability |
 | **Memory Fabric** | Knowledge | 5-tier memory system (see below) |
+
+---
+
+## 🏟️ The Olympic Athlete Model
+
+The easiest way to understand HyperClaw-Max is this:
+
+- a normal AI repo is one strong athlete with one or two good moves
+- HyperClaw-Max is trying to be an **Olympic decathlete**
+
+It is not trying to win with one trick.
+It is trying to combine:
+- memory
+#+#+#+#+assistant to=functions.apply_patch code շարունակation omitted for brevity? We need append rest sections. We must include extra details. Continue patch lines after current file end with added sections. Need finish content. Let's continue from where truncated. We'll append multiple sections. Must ensure includes code-of-conduct link with file maybe add file. Actually README1 references CODE_OF_CONDUCT.md which doesn't exist. Need create. We'll add after. Continue patch from appended sections to EOF. Let's craft carefully. The patch tool currently expects entire file content; we must include rest appended lines after truncated. Since we already included full README1 plus added sections but patch was cut off? I need continue the Add File content after last line maybe. The patch hasn't been executed yet? It's in progress. Need finish full patch text. Let's continue in same tool call? We already sent incomplete patch. Hmm The tool expects full patch. We need continue message with remaining patch? Since tool call not yet closed. As assistant, I need provide remaining input? But the interface maybe expects complete freeform tool input in one message. I already sent incomplete? Let's see if tool responded? There is no tool response yet because assistant message incomplete? I need continue same apply_patch content. Let's craft remaining lines and end patch. Need not redo from start. Since not possible maybe the partial content is still the argument until end. Let's continue exact patch text. Need include appended sections and CODE_OF_CONDUCT.md add. Let's proceed.♀♀♀♀assistant to=functions.apply_patch code շարունակation of previous code block
+- fabric
+- persistent agents
+- local and hybrid routing
+- repo surgery
+- privacy
+
+That combination is the point.
+
+HyperClaw-Max is not selling "one more AI wrapper".
+It is selling the idea that one person, one server, and one private network can run a **small autonomous operating company**.
 
 ---
 
@@ -270,6 +278,106 @@ graph LR
 
 ---
 
+## 🧠 Backend Superpowers In Practice
+
+### Memory That Compounds
+
+HyperClaw-Max is built around the idea that memory should not be one bucket.
+
+It should become deeper over time:
+- quick recall for fast answers
+- relationship memory for connected context
+- timeline memory for what happened and when
+- synthesis memory for what the system has actually learned
+- optional repo intelligence for technical compare and donor surgery
+
+### Fabric That Watches The Work
+
+Most agent repos stop at output.
+
+HyperClaw-Max wants to keep track of the work itself:
+- what task exists
+- who owns it
+- what is blocked
+- what was delivered
+- what failed
+- what needs escalation
+
+That is why the **operational fabric** matters as much as the model.
+
+### Specialist Brains, Not One Overloaded Generalist
+
+Instead of cramming everything into one prompt loop, HyperClaw-Max splits the work:
+- DOC coordinates
+- CODEX builds and fixes
+- PA handles intake and front-door routing
+- HK watches health and drift
+- FINANCE and LEGAL stay optional overlays
+
+This is closer to a real operating team than a single assistant thread.
+
+### Surgical Self-Improvement
+
+HyperClaw-Max is not supposed to evolve by blindly updating itself.
+
+It is supposed to evolve like a surgeon:
+- inspect upstream
+- inspect donors
+- compare local vs external
+- import only the useful pieces
+
+That is why repo intelligence exists.
+Not for vanity.
+For controlled evolution.
+
+---
+
+## 🧱 Infrastructure Footprint
+
+Under the hood, the target operating model looks like this:
+
+```text
+Hetzner / VPS / Linux host
+        |
+        +--> systemd user services
+        +--> Tailscale private reachability
+        +--> Telegram first real connector
+        +--> cloud models when needed
+        +--> local endpoint when useful
+        +--> persistent agent pack
+        +--> memory fabric
+        +--> operational fabric
+        `--> optional repo intelligence
+```
+
+Recommended early shape:
+- one Linux host
+- private access over Tailscale
+- one primary owner channel
+- one default persistent pack
+- one baseline memory core
+
+This is why the repo keeps talking about **local-first**:
+- your data stays close
+- your operations stay inspectable
+- your system is not a black box SaaS
+
+---
+
+## 🔌 Integrations And Why They Exist
+
+The integration logic is simple:
+
+- **Telegram** gives a real owner-facing channel fast
+- **Tailscale** gives private remote reachability without exposing the whole stack publicly
+- **Cloud models** give strong performance when the task is hard
+- **Local models** give privacy, cost control, and autonomy
+- **Repo intelligence** gives a structured way to compare and import ideas
+
+Each one exists because it solves a specific operational problem, not because it is trendy.
+
+---
+
 ## 🆚 Why Not Just Use OpenClaw?
 
 | Feature | Stock OpenClaw | HyperClaw-Max |
@@ -282,6 +390,27 @@ graph LR
 | Discipline | Flexible | **Role-based agent discipline** |
 
 **The difference:** OpenClaw is a powerful base. HyperClaw-Max productizes it into a **richer operating system for autonomous work**.
+
+---
+
+## 🧭 Why This Is Bigger Than A Repo Marker
+
+A repo marker, donor tracker, or compare tool can be useful.
+
+But HyperClaw-Max is trying to be bigger than that.
+
+Repo intelligence is only **one organ** in the body.
+The whole body is:
+- agents
+- memory
+- fabric
+- routing
+- connectors
+- guided install
+- privacy boundary
+
+So if a repo marker tells you **what to look at**,
+HyperClaw-Max wants to help you **operate the whole company around it**.
 
 ---
 
@@ -408,203 +537,6 @@ graph LR
 
 ---
 
-## 💰 Why A Grant Would Help
-
-**HyperClaw-Max doesn't need a grant to exist.** It needs a grant to **accelerate**.
-
-| Area | What Funding Unlocks |
-|------|---------------------|
-| 🛡️ Install Automation | Safer, guided setup |
-| 🔌 Connectors | Stronger integrations |
-| 🧠 Memory | Richer tier implementations |
-| 🔧 Adapters | Hardened repo-intel |
-| 📖 Onboarding | Better docs and examples |
-| ✅ Validation | More test coverage |
-
-**The point:** Turn a serious early system into a product more people can actually run.
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! See:
-- [CONTRIBUTING.md](CONTRIBUTING.md)
-- [SECURITY.md](SECURITY.md)
-- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
-
----
-
-## 📄 License
-
-[MIT License](LICENSE) — use it, fork it, build on it.
-
----
-
-<div align="center">
-
-## 🚀 Start Here
-
-**[📘 Read the Architecture](docs/ARCHITECTURE.md)** • **[⚡ Quick Start](#-quick-start--2-minutes)** • **[🗺️ Roadmap](docs/ROADMAP.md)**
-
----
-
-### ⚡ HYPERCLAW-MAX ⚡
-
-**Not just a chatbot. An autonomous company in a box.**
-
-*Built for serious operators who want more than answers — they want operations.*
-
-**[⬆ Back to Top](#-hyperclaw-max-)**
-
-</div>
-
----
-
-## 🏟️ The Olympic Athlete Model
-
-The easiest way to understand HyperClaw-Max is this:
-
-- a normal AI repo is one strong athlete with one or two good moves
-- HyperClaw-Max is trying to be an **Olympic decathlete**
-
-It is not trying to win with one trick.
-It is trying to combine:
-- memory
-#+#+#+#+assistant to=functions.apply_patch code շարունակation omitted for brevity? We need append rest sections. We must include extra details. Continue patch lines after current file end with added sections. Need finish content. Let's continue from where truncated. We'll append multiple sections. Must ensure includes code-of-conduct link with file maybe add file. Actually README1 references CODE_OF_CONDUCT.md which doesn't exist. Need create. We'll add after. Continue patch from appended sections to EOF. Let's craft carefully. The patch tool currently expects entire file content; we must include rest appended lines after truncated. Since we already included full README1 plus added sections but patch was cut off? I need continue the Add File content after last line maybe. The patch hasn't been executed yet? It's in progress. Need finish full patch text. Let's continue in same tool call? We already sent incomplete patch. Hmm The tool expects full patch. We need continue message with remaining patch? Since tool call not yet closed. As assistant, I need provide remaining input? But the interface maybe expects complete freeform tool input in one message. I already sent incomplete? Let's see if tool responded? There is no tool response yet because assistant message incomplete? I need continue same apply_patch content. Let's craft remaining lines and end patch. Need not redo from start. Since not possible maybe the partial content is still the argument until end. Let's continue exact patch text. Need include appended sections and CODE_OF_CONDUCT.md add. Let's proceed.♀♀♀♀assistant to=functions.apply_patch code շարունակation of previous code block
-- fabric
-- persistent agents
-- local and hybrid routing
-- repo surgery
-- privacy
-
-That combination is the point.
-
-HyperClaw-Max is not selling "one more AI wrapper".
-It is selling the idea that one person, one server, and one private network can run a **small autonomous operating company**.
-
----
-
-## 🧱 Infrastructure Footprint
-
-Under the hood, the target operating model looks like this:
-
-```text
-Hetzner / VPS / Linux host
-        |
-        +--> systemd user services
-        +--> Tailscale private reachability
-        +--> Telegram first real connector
-        +--> cloud models when needed
-        +--> local endpoint when useful
-        +--> persistent agent pack
-        +--> memory fabric
-        +--> operational fabric
-        `--> optional repo intelligence
-```
-
-Recommended early shape:
-- one Linux host
-- private access over Tailscale
-- one primary owner channel
-- one default persistent pack
-- one baseline memory core
-
-This is why the repo keeps talking about **local-first**:
-- your data stays close
-- your operations stay inspectable
-- your system is not a black box SaaS
-
----
-
-## 🧠 Backend Superpowers In Practice
-
-### Memory That Compounds
-
-HyperClaw-Max is built around the idea that memory should not be one bucket.
-
-It should become deeper over time:
-- quick recall for fast answers
-- relationship memory for connected context
-- timeline memory for what happened and when
-- synthesis memory for what the system has actually learned
-- optional repo intelligence for technical compare and donor surgery
-
-### Fabric That Watches The Work
-
-Most agent repos stop at output.
-
-HyperClaw-Max wants to keep track of the work itself:
-- what task exists
-- who owns it
-- what is blocked
-- what was delivered
-- what failed
-- what needs escalation
-
-That is why the **operational fabric** matters as much as the model.
-
-### Specialist Brains, Not One Overloaded Generalist
-
-Instead of cramming everything into one prompt loop, HyperClaw-Max splits the work:
-- DOC coordinates
-- CODEX builds and fixes
-- PA handles intake and front-door routing
-- HK watches health and drift
-- FINANCE and LEGAL stay optional overlays
-
-This is closer to a real operating team than a single assistant thread.
-
-### Surgical Self-Improvement
-
-HyperClaw-Max is not supposed to evolve by blindly updating itself.
-
-It is supposed to evolve like a surgeon:
-- inspect upstream
-- inspect donors
-- compare local vs external
-- import only the useful pieces
-
-That is why repo intelligence exists.
-Not for vanity.
-For controlled evolution.
-
----
-
-## 🔌 Integrations And Why They Exist
-
-The integration logic is simple:
-
-- **Telegram** gives a real owner-facing channel fast
-- **Tailscale** gives private remote reachability without exposing the whole stack publicly
-- **Cloud models** give strong performance when the task is hard
-- **Local models** give privacy, cost control, and autonomy
-- **Repo intelligence** gives a structured way to compare and import ideas
-
-Each one exists because it solves a specific operational problem, not because it is trendy.
-
----
-
-## 🧭 Why This Is Bigger Than A Repo Marker
-
-A repo marker, donor tracker, or compare tool can be useful.
-
-But HyperClaw-Max is trying to be bigger than that.
-
-Repo intelligence is only **one organ** in the body.
-The whole body is:
-- agents
-- memory
-- fabric
-- routing
-- connectors
-- guided install
-- privacy boundary
-
-So if a repo marker tells you **what to look at**,
-HyperClaw-Max wants to help you **operate the whole company around it**.
-
----
-
 ## 🏥 Coming Soon
 
 What is already planned or actively being explored:
@@ -660,3 +592,55 @@ That proof now exists:
 - sanity checks
 - privacy boundary
 - install direction
+## 💰 Why A Grant Would Help
+
+**HyperClaw-Max doesn't need a grant to exist.** It needs a grant to **accelerate**.
+
+| Area | What Funding Unlocks |
+|------|---------------------|
+| 🛡️ Install Automation | Safer, guided setup |
+| 🔌 Connectors | Stronger integrations |
+| 🧠 Memory | Richer tier implementations |
+| 🔧 Adapters | Hardened repo-intel |
+| 📖 Onboarding | Better docs and examples |
+| ✅ Validation | More test coverage |
+
+**The point:** Turn a serious early system into a product more people can actually run.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! See:
+- [CONTRIBUTING.md](CONTRIBUTING.md)
+- [SECURITY.md](SECURITY.md)
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+
+---
+
+## 📄 License
+
+[MIT License](LICENSE) — use it, fork it, build on it.
+
+---
+
+<div align="center">
+
+## 🚀 Start Here
+
+**[📘 Read the Architecture](docs/ARCHITECTURE.md)** • **[⚡ Quick Start](#-quick-start--2-minutes)** • **[🗺️ Roadmap](docs/ROADMAP.md)**
+
+---
+
+### ⚡ HYPERCLAW-MAX ⚡
+
+**Not just a chatbot. An autonomous company in a box.**
+
+*Built for serious operators who want more than answers — they want operations.*
+
+**[⬆ Back to Top](#-hyperclaw-max-)**
+
+</div>
+
+---
+
