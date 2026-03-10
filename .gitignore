@@ -1,7 +1,9 @@
 # Secrets and local config
 .env
 .env.*
-secrets/
+config/secrets/*.env
+config/secrets/*.key
+config/secrets/*.json
 
 # Python
 __pycache__/
@@ -18,6 +20,7 @@ node_modules/
 .vscode/
 
 # Runtime/state that should never be committed
+artifacts/
 data/state/
 logs/
 tmp/

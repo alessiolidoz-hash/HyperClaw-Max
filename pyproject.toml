@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hyperclaw-max"
+version = "0.1.0"
+description = "Local-first agent distro skeleton with context-intel tooling and layered-memory product direction."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  {name = "Alessio Lidozzi"}
+]
+dependencies = []
+
+[project.scripts]
+hyperclaw-symbol-slice = "hyperclaw_max.context_intel.symbol_slice:main"
+hyperclaw-feedback-store = "hyperclaw_max.context_intel.feedback_store:main"
+hyperclaw-context-pack = "hyperclaw_max.context_intel.pack:main"
+hyperclaw-failure-clinic = "hyperclaw_max.context_intel.clinic:main"
+hyperclaw-context-baseline = "hyperclaw_max.context_intel.baseline:main"
+hyperclaw-context-scorecard = "hyperclaw_max.context_intel.scorecard:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

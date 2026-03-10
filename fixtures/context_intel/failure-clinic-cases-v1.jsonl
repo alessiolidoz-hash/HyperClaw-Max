@@ -1,0 +1,8 @@
+{"case_id":"memory-drift-401","expected_category":"gateway_memory_drift","text":"memory sync failed (search): openai embeddings failed: 401 subsystem=memory provider=openai"}
+{"case_id":"model-not-allowed-gpt54","expected_category":"gateway_model_policy","text":"Gateway rejected model selection: model not allowed: openai-codex/gpt-5.4 on sessions_spawn"}
+{"case_id":"provider-rate-limit-429","expected_category":"provider_rate_limit","text":"rate_limit_error: request would exceed your account's rate limit (429)"}
+{"case_id":"operator-read-scope","expected_category":"gateway_operator_scope","text":"missing scope: operator.read while calling sessions.list via gateway rpc"}
+{"case_id":"operator-pairing-scope","expected_category":"gateway_operator_pairing_scope","text":"missing scope: operator.pairing while calling device pair list"}
+{"case_id":"pa-hook-unforwarded","expected_category":"pa_hook_unforwarded","text":"PA hook not handled or escalated: email hook timeout targetSessionKey=agent:main:main"}
+{"case_id":"calendar-invalid-token","expected_category":"calendar_push_invalid_token","text":"Calendar push receiver rejected token: invalid token on calendar-push-receiver.service"}
+{"case_id":"browser-relay-attach","expected_category":"browser_relay_attach_missing","text":"Browser relay active, cdpReady=false, no tabs attached, tab not found"}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HyperClaw-Max Context Intelligence Output Contract v1",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "case_id",
+    "title",
+    "query",
+    "mode",
+    "toolchain",
+    "metrics",
+    "result_pack",
+    "provenance"
+  ],
+  "properties": {
+    "contract_version": {"const": "v1"},
+    "case_id": {"type": "string"},
+    "title": {"type": "string"},
+    "query": {"type": "string"},
+    "mode": {"type": "string"},
+    "toolchain": {"type": "array", "items": {"type": "string"}},
+    "metrics": {"type": "object"},
+    "result_pack": {"type": "object"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": true
+}
