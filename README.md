@@ -1,115 +1,191 @@
 # HyperClaw-Max
 
-HyperClaw-Max is a local-first multi-agent distro built around layered memory, operational fabric, and optional repo intelligence.
+> A local-first autonomous company in a box.
+>
+> One server. One private network. Persistent agents. Deep memory. Surgical operations.
 
-Status:
-- installable product shape: draft
-- public-safe core extraction: in progress
-- private overlay separation: in progress
-- fine-tuning, donor surgery, and adapter work: still in progress
+HyperClaw-Max is a draft distro for people who want more than a chatbot.
 
-This repo is intentionally not finished yet.
-The goal is to make the product real and credible enough for early adopters and a future grant request, while still being honest that it is under active development.
+It is being built to feel like this:
+- your own private operator
+- your own technical chief of staff
+- your own memory-rich assistant company
+- running on infrastructure you control
 
-## What HyperClaw-Max Is
+Not as a toy demo.
+Not as a repo mirror.
+Not as a one-shot coding script.
 
-HyperClaw-Max is meant to package the strongest public-safe ideas from a private OpenClaw-based operating environment:
-- persistent specialist agents
-- layered memory
-- local or hybrid model routing
-- task/delegation/watchdog fabric
-- optional repo intelligence for donor and upstream work
+## The Idea In Plain English
 
-This is not:
-- a toy repo
-- a single maintainer script
-- a raw backup mirror
-- a finished product
+Most AI repos give you one impressive trick.
 
-This is:
-- a draft distro
-- with a real product direction
-- and a real privacy boundary
+HyperClaw-Max is trying to combine the tricks into one disciplined system:
+- agents that do different jobs
+- memory that gets deeper over time
+- workflows that can monitor, route, escalate, and recover
+- optional repo intelligence for donor surgery and upstream comparison
 
-## Why It Exists
+If a normal agent repo is a smart intern, HyperClaw-Max is aiming to be a small autonomous company.
 
-Most agent repos give you one or two of these:
-- local model support
-- coding tools
-- memory
-- MCP or browser control
-- multi-agent scaffolding
+## Why It Feels Different
 
-HyperClaw-Max is trying to combine them into one coherent operating system:
-- memory that has layers and jobs
-- agents that have roles
-- fabric that tracks work
-- optional repo intelligence that helps compare, inspect, and import surgically
+The goal is not just "answer better."
 
-## Core Product Pillars
+The goal is:
+- remember better
+- route better
+- work longer
+- recover faster
+- operate across channels and domains
+- stay private by default
 
-### 1. Memory Fabric
+## The Superpowers
 
-Target model:
-- Tier 1 = fast semantic recall
-- Tier 2 = graph/entity relationships
-- Tier 3 = episodic or temporal memory
-- Tier 4 = synthesis layer
-- optional Tier 5 style advisory lane through repo intelligence adapters
+### 1. Persistent Specialist Agents
 
-See:
-- [docs/MEMORY-FABRIC.md](docs/MEMORY-FABRIC.md)
+HyperClaw-Max is designed around long-lived agents with clear jobs:
+- `DOC` = orchestrator
+- `CODEX` = code and infrastructure
+- `PA` = intake and routing
+- `HK` = health and maintenance
+- optional `FINANCE`
+- optional `LEGAL`
 
-### 2. Operational Fabric
+This is closer to a team than a single bot.
 
-Target model:
+### 2. Deep Memory Fabric
+
+Instead of one flat memory bucket, the target model is layered:
+
+```text
+Tier 1 -> fast recall
+Tier 2 -> graph relationships
+Tier 3 -> episodic / timeline memory
+Tier 4 -> synthesis layer
+Tier 5 -> optional advisory / repo intelligence
+```
+
+Different questions should hit different memory surfaces.
+That is one of the main moats of the product.
+
+### 3. Operational Fabric
+
+HyperClaw-Max is not just "prompt in, answer out".
+
+It is being designed with a real fabric:
 - task capture
 - delegation state
-- watchdog sweeps
+- watchdogs
 - routing observability
 - delivery traceability
 
-### 3. Persistent Agent Pack
+That means the system can eventually do more than generate text.
+It can coordinate work like an operator.
 
-Default pack:
-- DOC / main
-- CODEX
-- PA
-- HK
+### 4. Local and Hybrid Brains
 
-Optional overlays:
-- FINANCE
-- LEGAL
+The target product is local-first, but not local-only.
 
-See:
-- [agents/PACK-MANIFEST.yaml](agents/PACK-MANIFEST.yaml)
+That means:
+- cloud models when they make sense
+- local models when they make sense
+- hybrid routing when cost, privacy, or latency demand it
 
-### 4. Repo Intelligence
+This is important because serious users want control, not lock-in.
 
-Repo intelligence is treated as a second engine, not as the heart of the distro.
+### 5. Surgical Repo Intelligence
 
-Current stance:
-- optional adapter
-- useful for upstream compare, donor scouting, and repo archaeology
-- must not be required for a clean base install
+HyperClaw-Max does not want blind updates.
+It wants surgical upgrades.
 
-See:
-- [adapters/gitnexus/README.md](adapters/gitnexus/README.md)
+That is why repo intelligence exists as a second engine:
+- inspect upstream
+- inspect donor repos
+- compare local vs external
+- import only what actually helps
 
-## Suggested Deployment Shape
+Not every user will need this.
+But for serious operators, it becomes a superpower.
 
-Recommended early deployment:
+## What It Looks Like
+
+```text
+                     HyperClaw-Max
+     -------------------------------------------------
+      User / Owner
+           |
+           v
+    Telegram / future connectors
+           |
+           v
+        DOC / Main
+           |
+   +-------+--------+-------------------+
+   |       |        |                   |
+   v       v        v                   v
+ CODEX     PA       HK          Optional FINANCE / LEGAL
+   |        |        |
+   +--------+--------+
+            |
+            v
+      Operational Fabric
+   tasks | delegations | watchdogs | observability
+            |
+            v
+        Memory Fabric
+   T1 recall -> T2 graph -> T3 timeline -> T4 synthesis
+            |
+            v
+   Optional Repo Intelligence Engine
+     upstream compare | donor scouting | surgery
+```
+
+## What Makes It More Than Stock OpenClaw
+
+OpenClaw already gives a powerful local-first base.
+
+HyperClaw-Max is trying to go further by productizing:
+- multi-agent role discipline
+- deeper memory layering
+- operational fabric
+- optional repo-intelligence lane
+- cleaner install story for a serious private deployment
+
+So the difference is not "OpenClaw, but renamed."
+
+The difference is:
+- OpenClaw as a base
+- extended into a richer operating system for autonomous work
+
+## Who It Is For
+
+HyperClaw-Max is for people who want:
+- a private AI operating layer on their own server
+- persistent agents instead of disposable chats
+- memory that compounds
+- a Telegram-first assistant company
+- room for sector packs like finance, legal, and eventually medical workflows
+
+It is not optimized for:
+- casual one-off chat users
+- zero-config mass-market use
+- people who want a hosted SaaS instead of running their own stack
+
+## Suggested Early Deployment
+
+Recommended first shape:
 - Linux host
 - systemd user services
-- Tailscale for private reachability
-- Telegram as first real connector
+- Tailscale for private access
+- Telegram as the first real connector
 - optional OpenAI / Anthropic keys
 - optional local model endpoint
 
 Suggested baseline host:
 - Hetzner or equivalent VPS
-- ARM64 or x86_64 both acceptable
-- 8 vCPU / 16 GB RAM is a reasonable early target
+- ARM64 or x86_64
+- 8 vCPU / 16 GB RAM
 
 Suggested dependencies:
 - Python 3.11+
@@ -118,94 +194,112 @@ Suggested dependencies:
 - `rg`
 - `bash`
 - optional `gh`
-- optional Ollama or another OpenAI-compatible local endpoint
+- optional Ollama or another local OpenAI-compatible endpoint
 
 See:
 - [docs/HOSTING-AND-DEPENDENCIES.md](docs/HOSTING-AND-DEPENDENCIES.md)
 
-## Privacy and Security Boundary
+## Guided Install Direction
 
-HyperClaw-Max must stay publicly understandable without leaking private operator life.
+The intended future install flow is:
+
+1. clone the repo
+2. run setup
+3. choose your model providers
+4. connect Tailscale
+5. connect Telegram
+6. enable the default agent pack
+7. run validation
+8. start working
+
+This repo is not fully there yet.
+But that is the direction.
+
+See:
+- [install/ONBOARDING.md](install/ONBOARDING.md)
+
+## What Is Already Real Today
+
+Already real:
+- product architecture
+- public-safe `context-intel` extraction
+- synthetic fixtures
+- tests
+- privacy boundary docs
+- generic boot drafts for `main`, `codex`, `pa`, and `hk`
+- doctor and privacy-check commands
+- generated example outputs
+- CI workflow
+
+Still in progress:
+- public-safe `query-fusion` shell
+- install and validation scripts
+- richer connector templates
+- repo-intel adapter contract
+- broader memory backends
+- sector overlays and advanced multimodal lanes
+
+## Quick Proof
+
+You can already run the current extracted core:
+
+```bash
+cd HyperClaw-Max
+PYTHONPATH=src python3 -m hyperclaw_max.doctor --repo .
+PYTHONPATH=src python3 -m hyperclaw_max.privacy_check --repo .
+PYTHONPATH=src python3 -m unittest discover -s tests -q
+PYTHONPATH=src python3 -m hyperclaw_max.context_intel.pack "telegram inbound dedupe session scope" --repo . --format human
+PYTHONPATH=src python3 -m hyperclaw_max.context_intel.clinic --text "memory sync failed (search): openai embeddings failed: 401 provider=openai" --format human
+```
+
+See generated outputs:
+- [examples/quickstart/README.md](examples/quickstart/README.md)
+
+## Privacy Boundary
+
+HyperClaw-Max is being prepared for public visibility without leaking the private operator life behind it.
 
 That means:
 - no real secrets in repo
 - no live session files
-- no personal account ids
-- no personal contacts, legal docs, finance data, or calendars
+- no personal ids
+- no private contacts, finance, legal, or calendar data
 - no direct copies of private operator memory
 
 See:
 - [docs/PRIVACY-AND-SECRETS.md](docs/PRIVACY-AND-SECRETS.md)
 - [docs/BOUNDARIES.md](docs/BOUNDARIES.md)
 
-## Repo Shape
+## Why The Grant Would Matter
 
-Core layers:
-- `agents/` = default persistent-agent pack
-- `config/` = public-safe example configuration
-- `docs/` = architecture and boundary map
-- `install/` = onboarding and setup plan
-- `adapters/` = optional integrations such as GitNexus
-- `src/` = extracted public-safe code
-- `fixtures/` = synthetic evaluation and clinic fixtures
-- `tests/` = stdlib tests for the extracted core
+HyperClaw-Max does not need funding to exist.
+It needs funding to accelerate.
 
-## Current Status
-
-What already exists:
-- staging architecture
-- first public-safe `context-intel` extraction
-- fixtures
-- tests
-- example config
-- onboarding draft
-- agent-pack manifest
-- generic boot drafts for `main`, `codex`, `pa`, and `hk`
-
-What still needs work:
-- public-safe `query-fusion` shell
-- install and validation scripts
-- real connector templates
-- repo-intel adapter contract
-- example deployment flows
-
-## Naming
-
-`HyperClaw-Max` is the confirmed working name.
-Branding can still evolve later without changing the structure.
-
-## Quick Start Today
-
-This is not yet one-command install.
-
-Today you can already:
-1. inspect the product architecture
-2. inspect the agent-pack plan
-3. run the extracted `context-intel` package locally
-4. run the fixtures and test suite
-
-Example:
-
-```bash
-cd HyperClaw-Max
-PYTHONPATH=src python3 -m unittest discover -s tests -q
-PYTHONPATH=src python3 -m hyperclaw_max.context_intel.pack "telegram inbound dedupe session scope" --repo . --format human
-```
+A grant would help turn the current serious draft into:
+- better install automation
+- stronger connector and model integration
+- deeper memory layers
+- safer repo-intelligence adapters
+- better validations and examples
+- a clearer path from private operator stack to public product
 
 ## Product Honesty
 
-The point of this repo is not to pretend HyperClaw-Max is complete.
-The point is to show:
-- what it is
-- why it is different
-- which parts are already real
-- and where grant-backed acceleration would actually matter
+HyperClaw-Max is not finished.
 
-## Key Documents
+That is not a weakness to hide.
+That is the truth:
+- the product direction is real
+- the moat is real
+- the early core is real
+- the installable public distro is still being hardened
+
+## Start Here
 
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - [docs/MEMORY-FABRIC.md](docs/MEMORY-FABRIC.md)
 - [docs/HOSTING-AND-DEPENDENCIES.md](docs/HOSTING-AND-DEPENDENCIES.md)
 - [docs/PRIVACY-AND-SECRETS.md](docs/PRIVACY-AND-SECRETS.md)
+- [docs/CLI.md](docs/CLI.md)
 - [docs/ROADMAP.md](docs/ROADMAP.md)
-- [install/ONBOARDING.md](install/ONBOARDING.md)
+- [agents/PACK-MANIFEST.yaml](agents/PACK-MANIFEST.yaml)
