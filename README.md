@@ -1,5 +1,10 @@
 # HyperClaw-Max
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+![Status](https://img.shields.io/badge/status-early%20but%20real-blue)
+![Mode](https://img.shields.io/badge/deployment-local--first-black)
+![Pack](https://img.shields.io/badge/agents-DOC%20%7C%20CODEX%20%7C%20PA%20%7C%20HK-orange)
+
 > A local-first autonomous company in a box.
 >
 > One server. One private network. Persistent agents. Deep memory. Surgical operations.
@@ -16,6 +21,41 @@ Not as a toy demo.
 Not as a repo mirror.
 Not as a one-shot coding script.
 
+## Quick Start In 2 Minutes
+
+If you just want to see whether the current repo is real:
+
+```bash
+git clone https://github.com/alessiolidoz-hash/HyperClaw-Max.git
+cd HyperClaw-Max
+PYTHONPATH=src python3 -m hyperclaw_max.doctor --repo .
+PYTHONPATH=src python3 -m hyperclaw_max.privacy_check --repo .
+PYTHONPATH=src python3 -m unittest discover -s tests -q
+PYTHONPATH=src python3 -m hyperclaw_max.context_intel.pack "telegram inbound dedupe session scope" --repo . --format human
+```
+
+What this proves today:
+- the repo installs as a real Python package surface
+- the extracted core works
+- the privacy boundary is checked
+- the test suite passes
+
+## What You Get In The Box
+
+HyperClaw-Max is being built as a private AI operating layer with:
+- a default persistent-agent pack
+- layered memory
+- operational fabric
+- local or hybrid model routing
+- optional repo intelligence
+- guided self-hosting direction
+
+In plain English:
+- not one bot
+- not one prompt
+- not one repo tool
+- a small autonomous operating system
+
 ## The Idea In Plain English
 
 Most AI repos give you one impressive trick.
@@ -27,6 +67,16 @@ HyperClaw-Max is trying to combine the tricks into one disciplined system:
 - optional repo intelligence for donor surgery and upstream comparison
 
 If a normal agent repo is a smart intern, HyperClaw-Max is aiming to be a small autonomous company.
+
+## What You Can Actually Use It For
+
+Examples of the product direction:
+- run a private operator stack on your own server
+- keep long-lived memory across projects and tasks
+- route work across specialist agents instead of one overloaded generalist
+- inspect technical incidents with structured diagnostics
+- compare your local system against donors or upstream before importing changes
+- evolve from a personal assistant into a sector-aware operating team
 
 ## Why It Feels Different
 
@@ -108,6 +158,24 @@ That is why repo intelligence exists as a second engine:
 Not every user will need this.
 But for serious operators, it becomes a superpower.
 
+## Why It Is More Interesting Than A Typical Agent Repo
+
+Typical agent repo:
+- one agent
+- one memory surface
+- one chat loop
+- weak or no operations layer
+
+HyperClaw-Max direction:
+- many agents
+- layered memory
+- task/delegation/watchdog fabric
+- local-first privacy
+- optional upstream/donor surgery lane
+
+That is the big idea.
+Not just “better answers”, but “better operations”.
+
 ## What It Looks Like
 
 ```text
@@ -158,6 +226,19 @@ The difference is:
 - OpenClaw as a base
 - extended into a richer operating system for autonomous work
 
+## Choose Your Path
+
+If you are:
+
+- a builder:
+  start from the extracted `context-intel` core and test surfaces
+- an operator:
+  read the architecture, hosting, and privacy docs first
+- a grant reviewer:
+  focus on the product shape, the current working core, and what funding would unlock
+- a future adopter:
+  treat this as an early but serious self-hosted distro
+
 ## Who It Is For
 
 HyperClaw-Max is for people who want:
@@ -198,6 +279,22 @@ Suggested dependencies:
 
 See:
 - [docs/HOSTING-AND-DEPENDENCIES.md](docs/HOSTING-AND-DEPENDENCIES.md)
+
+## Trust Signals
+
+This repo already includes:
+- MIT license
+- security policy
+- contribution guide
+- changelog
+- citation file
+- CI workflow
+- doctor command
+- privacy-check command
+- generated example outputs
+
+That does not mean “finished”.
+It means the project is trying to behave like a real product early.
 
 ## Guided Install Direction
 
@@ -254,6 +351,20 @@ PYTHONPATH=src python3 -m hyperclaw_max.context_intel.clinic --text "memory sync
 
 See generated outputs:
 - [examples/quickstart/README.md](examples/quickstart/README.md)
+
+## Why A Grant Would Help
+
+HyperClaw-Max does not need a grant to exist.
+It needs a grant to accelerate the difficult parts:
+- safer install automation
+- stronger connectors
+- richer memory tiers
+- adapter hardening
+- better guided onboarding
+- more examples and validation
+
+The point is not to fund an idea from zero.
+The point is to turn a serious early system into a product more people can actually run.
 
 ## Privacy Boundary
 
