@@ -1,0 +1,83 @@
+{
+  // Public distro example configuration.
+  // This file is intentionally schematic and contains no live values.
+
+  "agents": {
+    "defaults": {
+      "workspace": "./workspace",
+      "model": {
+        "primary": "openai/gpt-5.4",
+        "fallbacks": [
+          "anthropic/claude-sonnet-4-6"
+        ]
+      },
+      "memorySearch": {
+        "enabled": true,
+        "provider": "local",
+        "fallback": "none"
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "workspace": "./workspace",
+        "botName": "DOC"
+      },
+      {
+        "id": "codex",
+        "workspace": "./workspace-codex",
+        "botName": "CODEX"
+      },
+      {
+        "id": "pa",
+        "workspace": "./workspace-pa",
+        "botName": "PA"
+      },
+      {
+        "id": "hk",
+        "workspace": "./workspace-hk",
+        "botName": "HK"
+      }
+    ]
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "openai": {
+        "apiKey": "${OPENAI_API_KEY}"
+      },
+      "anthropic": {
+        "apiKey": "${ANTHROPIC_API_KEY}"
+      },
+      "ollama": {
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "api": "openai-chat"
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": false,
+      "accounts": {
+        "main": {
+          "botToken": "${TELEGRAM_BOT_TOKEN}",
+          "allowFrom": [
+            "${TELEGRAM_OWNER_CHAT_ID}"
+          ]
+        }
+      }
+    }
+  },
+  "publicDistro": {
+    "memoryFabric": {
+      "tier1": true,
+      "tier2": true,
+      "tier3": true,
+      "tier4": true
+    },
+    "repoIntelligence": {
+      "enabled": false,
+      "adapter": "none"
+    }
+  }
+}

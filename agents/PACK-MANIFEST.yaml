@@ -1,0 +1,31 @@
+version: 0
+name: hyperclaw-max-default-pack
+status: skeleton
+
+required_agents:
+  - id: main
+    role: orchestrator
+    workspace: workspace
+  - id: codex
+    role: coding_and_infra
+    workspace: workspace-codex
+  - id: pa
+    role: secretary_front_door
+    workspace: workspace-pa
+  - id: hk
+    role: housekeeping_ops
+    workspace: workspace-hk
+
+optional_agents:
+  - id: finance
+    role: finance_overlay
+    workspace: workspace-finance
+  - id: legal
+    role: legal_overlay
+    workspace: workspace-legal
+
+pack_rules:
+  - persistent agents are part of the public distro
+  - private user identity and routing doctrine are not
+  - real secrets are injected post-install
+  - private overlay may extend this pack without mutating public core
