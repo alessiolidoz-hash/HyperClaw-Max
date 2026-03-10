@@ -347,6 +347,8 @@ graph LR
 | [CLI.md](docs/CLI.md) | Command reference |
 | [ROADMAP.md](docs/ROADMAP.md) | What's next |
 | [PACK-MANIFEST.yaml](agents/PACK-MANIFEST.yaml) | Agent definitions |
+| [Building the Brain A Guide to the HyperClaw-Max 5-Tier Memory Fabric.md](Building%20the%20Brain%20A%20Guide%20to%20the%20HyperClaw-Max%205-Tier%20Memory%20Fabric.md) | Long-form memory fabric narrative |
+| [Implementation Blueprint.md](Implementation%20Blueprint.md) | Long-form deployment and operating model |
 
 ---
 
@@ -644,4 +646,3 @@ That proof now exists:
 - sanity checks
 - privacy boundary
 - install direction
-
