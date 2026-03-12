@@ -6,7 +6,7 @@
 
 ### 🚀 A Local-First Autonomous Company in a Box
 
-**One server. One private network. Persistent agents. Layered memory. Surgical operations.**
+**One server. Persistent agents. Layered memory. Surgical operations.**
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge)](LICENSE)
 [![Status](https://img.shields.io/badge/status-early%20but%20real-blue?style=for-the-badge)](docs/ROADMAP.md)
@@ -37,7 +37,7 @@ This public repo is meant to be:
 - installable from zero
 - honest about what is shipped today
 - extensible through optional adapters
-- usable without any private repo access
+- usable without access to any operator-specific repo or runtime
 
 <div align="center">
 
@@ -53,10 +53,10 @@ This public repo is meant to be:
 
 - installable Python package with real CLI entrypoints
 - default persistent pack: `DOC`, `CODEX`, `PA`, `HK`
-- `first-run` bootstrap over a clean target root
-- `materialize-pack` overlay renderer
+- `hyperclaw-first-run` bootstrap over a clean target root
+- `hyperclaw-materialize-pack` overlay renderer
 - public config template plus runtime validation
-- operational-fabric bootstrap for tasks, delegations, watchdogs, and summaries
+- operational-fabric bootstrap for tasks, delegations, watchdogs, and validation
 - Stage 1 `context-intel` core
 - public-safe systemd templates
 - optional `finance` and `legal` overlays
@@ -65,7 +65,7 @@ This public repo is meant to be:
 
 - Telegram connector template
 - HTTP hook template
-- Gmail / Calendar example seams
+- Gmail watch and calendar push examples
 - gateway environment override template
 - adapter docs for overlays, connectors, and future packaging lanes
 
@@ -75,7 +75,7 @@ This public repo is meant to be:
 - full voice / browser runtime
 - full Tier 2-Tier 5 runtime extraction
 - repo-intel adapter implementation
-- full gateway parity
+- full gateway/runtime parity with the reference deployment
 
 ---
 
@@ -394,25 +394,9 @@ It productizes a more opinionated operating model on top of OpenClaw:
 
 ---
 
-## ✅ What's Real Today
+## 🧭 Remaining Extraction Gaps
 
-### Already Working In This Repo
-
-| Component | Status |
-|-----------|--------|
-| Product architecture | ✅ Real |
-| Public config example | ✅ Real |
-| `doctor`, `privacy-check`, `validate-config` | ✅ Real |
-| `first-run` bootstrap | ✅ Real |
-| `materialize-pack` renderer | ✅ Real |
-| Gateway unit templates | ✅ Real |
-| Operational-fabric schemas and CLI | ✅ Real |
-| Stage 1 `context-intel` extraction | ✅ Real |
-| Optional `finance` and `legal` overlays | ✅ Real |
-| Connector templates | ✅ Real |
-| CI workflow and tests | ✅ Real |
-
-### Template-Only Or Later Adapter Lanes
+These lanes are documented as part of the product direction, but are not yet shipped as full public adapters:
 
 - richer connector automation
 - broader local / hybrid routing
@@ -447,7 +431,7 @@ It productizes a more opinionated operating model on top of OpenClaw:
 ## 🔒 Privacy And Boundary
 
 This repo is intentionally split into three zones:
-- **Public core:** installable and contributable by anyone
+- **Public core:** installable and open to contribution by anyone
 - **Optional adapters:** useful but not required for a clean install
 - **Private overlay:** secrets, live state, personal data, and operator-specific doctrine
 
