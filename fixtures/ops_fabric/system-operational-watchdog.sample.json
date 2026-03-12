@@ -9,7 +9,7 @@
     "candidates": 1,
     "dispatches": 1,
     "deliverableActivity": 1,
-    "normalizedPrincipalVisibleTasks": 1,
+    "normalizedOwnerVisibleTasks": 1,
     "resolved": 0
   },
   "incidents": {

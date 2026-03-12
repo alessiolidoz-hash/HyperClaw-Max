@@ -7,5 +7,5 @@ Public role:
 
 Private-only items that must not be copied here:
 - personal identity details
-- private family routing
+- private household routing
 - private Telegram/WhatsApp doctrine

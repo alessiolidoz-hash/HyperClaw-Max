@@ -103,7 +103,7 @@ def run_first_run(
 def main() -> int:
     ap = argparse.ArgumentParser(description="Run the public HyperClaw-Max first-run bootstrap")
     ap.add_argument("target_root", type=Path, help="Destination root for the materialized public pack")
-    ap.add_argument("--repo", type=Path, default=repo_root())
+    ap.add_argument("--repo", type=Path, default=None)
     ap.add_argument("--include-optional", action="append", default=[], help="Optional agent id to materialize")
     ap.add_argument("--all-optional", action="store_true", help="Materialize all optional overlay agents")
     ap.add_argument("--force", action="store_true", help="Overwrite existing materialized files")
@@ -111,7 +111,7 @@ def main() -> int:
     args = ap.parse_args()
 
     payload = run_first_run(
-        args.repo,
+        args.repo.resolve() if args.repo is not None else repo_root(),
         args.target_root,
         include_optional=set(args.include_optional),
         include_all_optional=args.all_optional,

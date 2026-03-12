@@ -48,7 +48,7 @@ def empty_watchdog() -> dict[str, Any]:
             "candidates": 0,
             "dispatches": 0,
             "deliverableActivity": 0,
-            "normalizedPrincipalVisibleTasks": 0,
+            "normalizedOwnerVisibleTasks": 0,
             "resolved": 0,
         },
         "incidents": {},

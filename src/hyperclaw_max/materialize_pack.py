@@ -13,10 +13,35 @@ from .ops_fabric.cli import bootstrap_state_dir
 BOOT_FILES = ("README.md", "AGENTS.md", "BOOTSTRAP.md", "TOOLS.md")
 LIST_SECTIONS = {"required_agents", "optional_agents", "pack_rules"}
 REQUIRED_MANIFEST_KEYS = {"version", "name", "status", "required_agents", "optional_agents", "pack_rules"}
+REPO_ROOT_MARKERS = (
+    "pyproject.toml",
+    "agents/PACK-MANIFEST.yaml",
+    "config/openclaw.public.example.jsonc",
+)
 
 
-def repo_root() -> Path:
-    return Path(__file__).resolve().parents[2]
+def looks_like_repo_root(path: Path) -> bool:
+    return all((path / marker).exists() for marker in REPO_ROOT_MARKERS)
+
+
+def repo_root(cwd: Path | None = None, module_path: Path | None = None) -> Path:
+    candidates: list[Path] = []
+    if cwd is not None:
+        candidates.append(cwd.resolve())
+    else:
+        candidates.append(Path.cwd().resolve())
+
+    source_path = module_path.resolve() if module_path is not None else Path(__file__).resolve()
+    candidates.extend(source_path.parents)
+
+    seen: set[Path] = set()
+    for candidate in candidates:
+        if candidate in seen:
+            continue
+        seen.add(candidate)
+        if looks_like_repo_root(candidate):
+            return candidate
+    raise FileNotFoundError("Unable to locate the HyperClaw-Max repository root; pass --repo explicitly.")
 
 
 def now_iso() -> str:
@@ -205,7 +230,7 @@ def materialize_pack(
 def main() -> int:
     ap = argparse.ArgumentParser(description="Materialize the public HyperClaw-Max pack over a target root")
     ap.add_argument("target_root", type=Path, help="Destination root that will host config, workspaces, and runtime state")
-    ap.add_argument("--repo", type=Path, default=repo_root())
+    ap.add_argument("--repo", type=Path, default=None)
     ap.add_argument("--include-optional", action="append", default=[], help="Optional agent id to materialize")
     ap.add_argument("--all-optional", action="store_true", help="Materialize all optional overlay agents")
     ap.add_argument("--force", action="store_true", help="Overwrite existing materialized files")
@@ -213,7 +238,7 @@ def main() -> int:
     args = ap.parse_args()
 
     payload = materialize_pack(
-        args.repo,
+        args.repo.resolve() if args.repo is not None else repo_root(),
         args.target_root,
         include_optional=set(args.include_optional),
         include_all_optional=args.all_optional,

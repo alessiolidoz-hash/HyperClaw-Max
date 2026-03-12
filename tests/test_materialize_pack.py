@@ -1,9 +1,10 @@
 import json
+import os
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from hyperclaw_max.materialize_pack import load_pack_manifest, materialize_pack
+from hyperclaw_max.materialize_pack import load_pack_manifest, materialize_pack, repo_root
 from hyperclaw_max.ops_fabric.cli import validate_state_dir
 
 
@@ -48,6 +49,18 @@ class MaterializePackTests(unittest.TestCase):
             self.assertTrue(payload["ok"])
             self.assertTrue((Path(tmp) / "workspace-finance" / "AGENTS.md").exists())
             self.assertFalse((Path(tmp) / "workspace-legal").exists())
+
+    def test_repo_root_prefers_cwd_when_module_path_is_external(self) -> None:
+        with TemporaryDirectory() as tmp:
+            fake_module = Path(tmp) / ".venv" / "lib" / "python3.12" / "site-packages" / "hyperclaw_max" / "materialize_pack.py"
+            fake_module.parent.mkdir(parents=True)
+            fake_module.write_text("# synthetic module path for repo root discovery\n", encoding="utf-8")
+            old_cwd = Path.cwd()
+            try:
+                os.chdir(REPO_ROOT)
+                self.assertEqual(repo_root(module_path=fake_module), REPO_ROOT)
+            finally:
+                os.chdir(old_cwd)
 
 
 if __name__ == "__main__":

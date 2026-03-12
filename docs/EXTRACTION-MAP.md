@@ -30,10 +30,10 @@ Classification:
 
 ### Rewrite
 
-- dist patch ledger shape from `/root/.openclaw/patches/apply-patches.sh`
+- dist patch ledger shape from the private runtime patch ledger
 - patch application helpers that currently assume the private compiled dist path
 - pre-start sync helpers such as `workspace/scripts/sync_agent_main_thinking.py`
-- any control-plane helper that assumes live session stores under `/root/.openclaw/agents/`
+- any control-plane helper that assumes live session stores under the private runtime root
 
 ### Exclude
 
@@ -94,9 +94,9 @@ Classification:
 
 ### Exclude
 
-- `/root/.openclaw/memory/main.sqlite`
+- live Tier 1 SQLite stores
 - live graph stores and caches
-- `/root/.openclaw/arscontexta/`
+- live synthesis stores
 - private operator memory and live episodic traces
 
 ## Operational Fabric
