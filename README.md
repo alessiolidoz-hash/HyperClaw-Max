@@ -9,11 +9,12 @@
 **One server. Persistent agents. Layered memory. Surgical operations.**
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![CI](https://github.com/alessiolidoz-hash/HyperClaw-Max/actions/workflows/ci.yml/badge.svg?style=for-the-badge)](https://github.com/alessiolidoz-hash/HyperClaw-Max/actions/workflows/ci.yml)
 [![Status](https://img.shields.io/badge/status-early%20but%20real-blue?style=for-the-badge)](docs/ROADMAP.md)
 [![Mode](https://img.shields.io/badge/deployment-local--first-black?style=for-the-badge)](docs/HOSTING-AND-DEPENDENCIES.md)
 [![Pack](https://img.shields.io/badge/agents-DOC%20%7C%20CODEX%20%7C%20PA%20%7C%20HK-orange?style=for-the-badge)](agents/PACK-MANIFEST.yaml)
 
-[Quick Start](#-quick-start) • [Installation](#-installation-today) • [Architecture](#-architecture) • [Capabilities](#-core-capabilities) • [Documentation](#-documentation)
+[Quick Start](#-quick-start) • [Installation](#-installation-today) • [Key Terms](#-key-terms) • [Architecture](#-architecture) • [Documentation](#-documentation) • [Privacy](#-privacy-and-boundary)
 
 </div>
 
@@ -31,11 +32,32 @@ HyperClaw-Max turns base OpenClaw into a more opinionated operating model for se
 - operational state for tasks, delegations, and watchdogs
 - install, validation, and packaging surfaces that can be used and contributed to by third parties
 
+In plain language:
+- you install HyperClaw-Max on a Linux machine you control
+- you add your own model keys and optional connector values
+- you get a persistent multi-agent system that can keep structured state, validate its config, and grow through optional adapters without depending on any private deployment
+
 This public repo is meant to be:
 - installable from zero
 - honest about what is shipped today
 - extensible through optional adapters
 - usable without access to any operator-specific repo or runtime
+
+## 🗝️ Key Terms
+
+- **OpenClaw:** the open-source base framework that HyperClaw-Max builds upon
+- **Public core:** the installable, auditable, contribution-safe part of this repo
+- **Pack:** the agent set materialized into a target root, such as `DOC`, `CODEX`, `PA`, `HK`
+- **Fabric:** the stateful layer that tracks work, such as tasks, delegations, and watchdogs
+- **Overlay:** an optional extension layered on top of the public core, such as `finance` or `legal`
+- **`context-intel`:** the current shipped analysis and diagnostics slice of the broader memory story
+
+## 👥 Who Is This For?
+
+- **Builders:** people who want a real public-core codebase to inspect, extend, and ship against
+- **Operators:** people who want a local-first agent stack they can run on infrastructure they control
+- **Technical evaluators:** reviewers who need install, validation, and packaging surfaces that can be audited end to end
+- **Early adopters:** teams or individuals who want a clean core first, then optional adapters and overlays as needed
 
 <div align="center">
 
@@ -81,11 +103,16 @@ This public repo is meant to be:
 
 Two fast paths:
 
+Path A runs directly from the source tree.
+Path B installs the package and uses the public CLI entrypoints the way a normal operator would.
+
 Prerequisites for both paths:
 - Python 3.11+
 - `git`
 - `bash`
 - `ripgrep`
+
+For the full host baseline and optional runtime dependencies, see [Installation Today](#-installation-today).
 
 ### A. Fastest Path From A Repo Checkout
 
@@ -136,6 +163,7 @@ PYTHONPATH=src python3 -m hyperclaw_max.context_intel.pack "telegram inbound ded
 ```
 
 Use this as a quick sanity check for the shipped `context-intel` surface.
+Example outputs live in [examples/README.md](examples/README.md) and [examples/outputs/context-pack.json](examples/outputs/context-pack.json).
 
 **What this proves:**
 - the public core works from a source checkout
@@ -157,7 +185,7 @@ This is the current honest install surface for an external user.
 | CPU | ARM64 or x86_64, 8 vCPU recommended |
 | RAM | 16 GB recommended |
 | Python | 3.11+ |
-| Node | 20+ |
+| Node | Optional: 20+ for broader gateway or adapter surfaces |
 | Services | `systemd --user` if using gateway templates |
 
 Core packages:
@@ -329,7 +357,8 @@ The product model is a 5-tier memory system:
 - Tier 4 for synthesis
 - Tier 5 for repo intelligence and technical comparison
 
-The public repo ships the Stage 1 `context-intel` core today and documents the broader memory model for future extraction.
+The public repo ships the Stage 1 `context-intel` core today as the first public slice of this memory story and documents the broader model for future extraction.
+See [docs/MEMORY-FABRIC.md](docs/MEMORY-FABRIC.md) for the tier-by-tier breakdown.
 
 ### Operational Fabric Base
 
@@ -428,6 +457,7 @@ These lanes are documented as part of the product direction, but are not yet shi
 | [examples/README.md](examples/README.md) | sample outputs and reviewer-facing examples |
 | [examples/quickstart/README.md](examples/quickstart/README.md) | quickstart example outputs |
 | [CHANGELOG.md](CHANGELOG.md) | notable repo changes over time |
+| [CITATION.cff](CITATION.cff) | citation metadata for research or academic reuse |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | detailed system design |
 | [docs/MEMORY-FABRIC.md](docs/MEMORY-FABRIC.md) | layered memory model |
 | [docs/OPERATIONAL-FABRIC.md](docs/OPERATIONAL-FABRIC.md) | public task / delegation / watchdog base |
@@ -473,6 +503,11 @@ Contribution surfaces are open on the public core:
 - pack materialization
 - operational-fabric base
 - connector templates and optional adapters
+
+Practical contribution flow:
+1. run the public-core checks documented above
+2. keep docs, examples, and command surfaces aligned
+3. open a PR against the public core without introducing private overlay data
 
 Project policies:
 - [CONTRIBUTING.md](CONTRIBUTING.md)
