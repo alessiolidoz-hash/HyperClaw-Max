@@ -15,8 +15,6 @@
 
 [Quick Start](#-quick-start) • [Installation](#-installation-today) • [Architecture](#-architecture) • [Capabilities](#-core-capabilities) • [Documentation](#-documentation)
 
----
-
 </div>
 
 ---
@@ -83,6 +81,12 @@ This public repo is meant to be:
 
 Two fast paths:
 
+Prerequisites for both paths:
+- Python 3.11+
+- `git`
+- `bash`
+- `ripgrep`
+
 ### A. Fastest Path From A Repo Checkout
 
 Best for:
@@ -125,11 +129,13 @@ hyperclaw-validate-config "$TARGET_ROOT/config/openclaw.public.example.jsonc"
 hyperclaw-ops-fabric summary --state-dir "$TARGET_ROOT/runtime/state"
 ```
 
-### Optional Smoke
+### Optional Smoke Test
 
 ```bash
 PYTHONPATH=src python3 -m hyperclaw_max.context_intel.pack "telegram inbound dedupe" --repo . --format human
 ```
+
+Use this as a quick sanity check for the shipped `context-intel` surface.
 
 **What this proves:**
 - the public core works from a source checkout
@@ -377,6 +383,8 @@ This is intentional:
 
 ## 🆚 Why Not Just Use OpenClaw?
 
+OpenClaw is the open-source base framework that HyperClaw-Max builds upon.
+
 | Feature | Stock OpenClaw | HyperClaw-Max |
 |---------|---------------|---------------|
 | Agents | single or ad-hoc | persistent specialist pack |
@@ -415,7 +423,11 @@ These lanes are documented as part of the product direction, but are not yet shi
 | [docs/CLI.md](docs/CLI.md) | command reference and install surfaces |
 | [docs/BOUNDARIES.md](docs/BOUNDARIES.md) | public core vs optional adapters vs private overlay |
 | [install/connectors/README.md](install/connectors/README.md) | connector templates and required inputs |
+| [install/systemd/README.md](install/systemd/README.md) | public-safe gateway service templates |
 | [install/overlay/README.md](install/overlay/README.md) | pack materialization over a clean base install |
+| [examples/README.md](examples/README.md) | sample outputs and reviewer-facing examples |
+| [examples/quickstart/README.md](examples/quickstart/README.md) | quickstart example outputs |
+| [CHANGELOG.md](CHANGELOG.md) | notable repo changes over time |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | detailed system design |
 | [docs/MEMORY-FABRIC.md](docs/MEMORY-FABRIC.md) | layered memory model |
 | [docs/OPERATIONAL-FABRIC.md](docs/OPERATIONAL-FABRIC.md) | public task / delegation / watchdog base |
