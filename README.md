@@ -13,7 +13,7 @@
 [![Mode](https://img.shields.io/badge/deployment-local--first-black?style=for-the-badge)](docs/HOSTING-AND-DEPENDENCIES.md)
 [![Pack](https://img.shields.io/badge/agents-DOC%20%7C%20CODEX%20%7C%20PA%20%7C%20HK-orange?style=for-the-badge)](agents/PACK-MANIFEST.yaml)
 
-[Quick Start](#-quick-start--2-minutes) • [Architecture](#-architecture--the-brain) • [Superpowers](#-superpowers) • [Installation](#-guided-install) • [Documentation](#-documentation)
+[Quick Start](#-quick-start) • [Architecture](#-architecture--the-brain) • [Superpowers](#-superpowers) • [Installation](#-installation-today) • [Documentation](#-documentation)
 
 ---
 
@@ -35,6 +35,23 @@ HyperClaw-Max is a distro for people who want:
 
 Think of it as **hiring a small autonomous company** — not just prompting a bot.
 
+## ✅ What You Get Today
+
+**Public core already shipped in this repo:**
+- installable Python package with real CLI entrypoints
+- `first-run` bootstrap and pack materialization
+- public config template plus runtime validation
+- operational-fabric bootstrap for tasks, delegations, and watchdog state
+- Stage 1 `context-intel` core
+- optional finance/legal boot overlays
+
+**Not shipped yet in the public repo:**
+- full connector automation
+- full voice/browser runtime
+- full Tier 2-Tier 5 memory runtime
+- repo-intel adapter implementation
+- full gateway/runtime parity with the private body
+
 <div align="center">
 
 <img src="assets/landing/architecture-simple.jpg" alt="HyperClaw-Max overview" width="800"/>
@@ -43,14 +60,21 @@ Think of it as **hiring a small autonomous company** — not just prompting a bo
 
 ---
 
-## ⚡ Quick Start — 2 Minutes
+## ⚡ Quick Start
+
+Two fast paths:
+
+### A. Fastest Path From A Repo Checkout
+
+Best for:
+- contributors
+- reviewers
+- local evaluation from source
 
 ```bash
-# Clone and verify
 git clone https://github.com/alessiolidoz-hash/HyperClaw-Max.git
 cd HyperClaw-Max
 
-# Run diagnostics and materialize a clean public-core target
 TARGET_ROOT=.hyperclaw-max-demo
 PYTHONPATH=src python3 -m hyperclaw_max.doctor --repo .
 PYTHONPATH=src python3 -m hyperclaw_max.privacy_check --repo .
@@ -58,18 +82,43 @@ PYTHONPATH=src python3 -m hyperclaw_max.first_run "$TARGET_ROOT"
 PYTHONPATH=src python3 -m hyperclaw_max.runtime_validate "$TARGET_ROOT/config/openclaw.public.example.jsonc"
 PYTHONPATH=src python3 -m hyperclaw_max.ops_fabric.cli summary --state-dir "$TARGET_ROOT/runtime/state"
 PYTHONPATH=src python3 -m unittest discover -s tests -q
+```
 
-# Test the context intelligence engine
+### B. Installed CLI Path
+
+Best for:
+- operators evaluating a clean install flow
+- users who want the package entrypoints rather than `PYTHONPATH=src`
+
+```bash
+git clone https://github.com/alessiolidoz-hash/HyperClaw-Max.git
+cd HyperClaw-Max
+
+python3 -m venv .venv
+. .venv/bin/activate
+pip install .
+
+TARGET_ROOT=.hyperclaw-max-demo
+hyperclaw-doctor --repo .
+hyperclaw-privacy-check --repo .
+hyperclaw-first-run "$TARGET_ROOT"
+hyperclaw-validate-config "$TARGET_ROOT/config/openclaw.public.example.jsonc"
+hyperclaw-ops-fabric summary --state-dir "$TARGET_ROOT/runtime/state"
+```
+
+### Optional Smoke
+
+```bash
 PYTHONPATH=src python3 -m hyperclaw_max.context_intel.pack "telegram inbound dedupe" --repo . --format human
 ```
 
 **What this proves:**
-- ✅ The repo installs as a real Python package
-- ✅ The extracted core works
+- ✅ The public core works from a source checkout
+- ✅ The same surfaces are exposed as installed CLI entrypoints
 - ✅ The privacy boundary is solid
 - ✅ The public core can be materialized on a clean target root
 - ✅ The public config and ops-fabric base validate
-- ✅ The test suite passes
+- ✅ The shipped test suite passes
 
 ---
 
@@ -355,7 +404,7 @@ For controlled evolution.
 Under the hood, the target operating model looks like this:
 
 ```text
-Hetzner / VPS / Linux host
+Linux host / VPS
         |
         +--> systemd user services
         +--> private network boundary
@@ -378,13 +427,12 @@ Recommended early shape:
 - connectors enabled only when configured
 
 **Reference deployment already proven in the private system:**
-- **Hetzner CAX31**
-- **ARM64 Ampere Altra**
-- **8 vCPU**
-- **16 GB RAM**
-- **160 GB disk**
-- **systemd user services**
-- **Tailscale-first private boundary**
+- single Linux VPS
+- ARM64 or x86_64
+- 8 vCPU
+- 16 GB RAM
+- systemd user services
+- private network boundary
 
 This is why the repo keeps talking about **local-first**:
 - your data stays close
@@ -408,21 +456,19 @@ The integration logic is simple:
 - **Local models** give privacy, cost control, and autonomy
 - **Hooks** give a clean way to bridge email/calendar/drive style ingress
 - **Repo intelligence** gives a structured way to compare and import ideas
-- **Cartesia + Ink** give the voice and call surface
+- **Voice adapters** are the future seam for voice and RTC lanes
 
-**Reference live surfaces already proven in the private system:**
-- Telegram
-- WhatsApp
+**Public repo today:**
+- Telegram, HTTP hook, Gmail-watch, and calendar-push templates
+- public-safe systemd templates
+- optional finance/legal overlays
+- context-intel core and operational-fabric base
+
+**Live private body additionally proves:**
+- richer Telegram / WhatsApp flows
 - Gmail / Calendar / Drive hook ingress
 - voice/browser services
 - repo-intel advisory lanes
-
-**Reference voice stack in the private system today:**
-- **Cartesia Sonic 3** for TTS
-- **Cartesia Line** for browser/PWA voice calls
-- **Ink STT** in the voice-call path
-- `voice-broker`, `voice-line-agent`, and `voice-web` as dedicated services
-- `rtc-gateway-proxy` as an extra real-time surface
 
 **Public repo truth right now:**
 - the docs describe these surfaces because they are real in the body
@@ -438,10 +484,10 @@ Each one exists because it solves a specific operational problem, not because it
 | Feature | Stock OpenClaw | HyperClaw-Max |
 |---------|---------------|---------------|
 | Agents | Single or ad-hoc | **Persistent specialist pack** |
-| Memory | Basic | **5-tier deep fabric** |
-| Operations | Minimal | **Full operational fabric** |
-| Intelligence | Core only | **+ Repo intelligence engine** |
-| Install | DIY | **Stage 1 real, full distro install surface in progress** |
+| Memory | Basic | **Layered model + public context-intel core** |
+| Operations | Minimal | **Public operational-fabric base** |
+| Intelligence | Core only | **Context-intel core + repo-intel seam** |
+| Install | DIY | **Public-core bootstrap and validation surface** |
 | Discipline | Flexible | **Role-based agent discipline** |
 
 **The difference:** OpenClaw is a powerful base. HyperClaw-Max productizes it into a **richer operating system for autonomous work**.
@@ -474,22 +520,24 @@ HyperClaw-Max wants to help you **operate the whole company around it**.
 | Who | What They Get |
 |-----|---------------|
 | **🔧 Builders** | Extracted `context-intel` core, test surfaces, working code |
-| **👔 Operators** | Private AI stack, persistent agents, compounding memory |
-| **📝 Grant Reviewers** | Real product shape, working core, clear funding unlock path |
-| **🚀 Early Adopters** | Serious self-hosted distro, Telegram-first, room for sector packs |
+| **👔 Operators** | Local-first public core, persistent agents, clear install boundary |
+| **🧪 Technical Evaluators** | Real product surface, validation commands, clean-room install path |
+| **🚀 Early Adopters** | Serious self-hosted distro with optional adapter lanes |
 
 ### What You Can Do With It
 
-- ✅ Run a private operator stack on your own server
+- ✅ Bootstrap a private operator stack on your own server
+- ✅ Materialize a persistent core pack from a clean target root
 - ✅ Keep long-lived memory across projects and tasks
-- ✅ Route work across specialist agents
+- ✅ Validate config and runtime state before expanding the install
+- ✅ Route work across a persistent specialist core pack
 - ✅ Inspect technical incidents with structured diagnostics
 - ✅ Compare local vs upstream/donor before importing
-- ✅ Evolve from assistant → sector-aware operating team
+- ✅ Contribute to the public core without touching the private body
 
 ---
 
-## 🛠️ Phased Install Surface
+## 🛠️ Installation Today
 
 ### Recommended Baseline
 
@@ -537,6 +585,10 @@ graph LR
 
 | Doc | What's Inside |
 |-----|---------------|
+| [install/ONBOARDING.md](install/ONBOARDING.md) | Real staged setup path for the public core |
+| [docs/BOUNDARIES.md](docs/BOUNDARIES.md) | Core vs optional vs private overlay boundary |
+| [install/connectors/README.md](install/connectors/README.md) | Optional connector templates |
+| [install/overlay/README.md](install/overlay/README.md) | Pack materialization over a clean target root |
 | [ARCHITECTURE.md](docs/ARCHITECTURE.md) | System design, layers, components |
 | [MEMORY-FABRIC.md](docs/MEMORY-FABRIC.md) | 5-tier memory system details |
 | [HOSTING-AND-DEPENDENCIES.md](docs/HOSTING-AND-DEPENDENCIES.md) | Server setup, requirements |
@@ -565,7 +617,7 @@ graph LR
 | Generic boot drafts | ✅ Real |
 | Public extraction map | ✅ Real |
 | Public config example | ✅ Real |
-| Manual onboarding path | ✅ Real |
+| First-run bootstrap + manual config completion | ✅ Real |
 | Gateway unit templates | ✅ Real |
 | Operational-fabric schemas and bootstrap CLI | ✅ Real |
 | Materialize-pack CLI | ✅ Real |
@@ -622,15 +674,9 @@ What is already planned or actively being explored:
 - better install automation
 - stronger multimodal lanes
 - sector overlays
-- a real **Doctor / medical lane** for the principal
+- possible future specialist overlays, including a medical / doctor lane
 
-That last one is not marketing fluff.
-It is a real direction for the product shape.
-
-**Reference reality today:**
-- a first private **Doctor** tranche already exists in the system of origin
-- it has dedicated workspace, scripts, skills, and strict medical evidence handling
-- the public distro does not ship that lane yet, but the direction is real
+These are product directions, not promises that the public repo already ships those surfaces today.
 
 ---
 
