@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "lastRunAt": "2026-03-12T12:20:00Z",
+    "openTasks": 1,
+    "openDelegations": 1,
+    "gatewayIssues": 0,
+    "unitIssues": 0,
+    "cronIssues": 0,
+    "candidates": 1,
+    "dispatches": 1,
+    "deliverableActivity": 1,
+    "normalizedPrincipalVisibleTasks": 1,
+    "resolved": 0
+  },
+  "incidents": {
+    "public-task:PUBLIC-TASK-001:attention" : {
+      "id": "SOW-public-001",
+      "signature": "public-task:PUBLIC-TASK-001:attention",
+      "category": "deliverable_ready_review",
+      "severity": "high",
+      "routes": [
+        "main",
+        "hk"
+      ],
+      "summary": "DOC review required for PUBLIC-TASK-001",
+      "source": "system-operational-watchdog",
+      "evidence": [
+        "task=PUBLIC-TASK-001 status=open targetAgent=codex",
+        "deliverablesObserved=reports/PUBLIC-FABRIC-WAVE-1.md"
+      ],
+      "evidenceHash": "public-example-hash",
+      "reportPath": "reports/OPS-INCIDENT-PUBLIC-001.md",
+      "status": "open",
+      "createdAt": "2026-03-12T12:20:00Z",
+      "updatedAt": "2026-03-12T12:20:00Z",
+      "firstSeenAt": "2026-03-12T12:20:00Z",
+      "lastSeenAt": "2026-03-12T12:20:00Z",
+      "lastDispatchAt": "2026-03-12T12:20:00Z",
+      "lastMainEventAt": "2026-03-12T12:20:00Z",
+      "dispatchCount": 1,
+      "mainEventCount": 1,
+      "reportSeenAt": null
+    }
+  },
+  "deliverables": {
+    "reports/PUBLIC-FABRIC-WAVE-1.md": {
+      "firstSeenAt": "2026-03-12T12:20:00Z",
+      "lastSeenAt": "2026-03-12T12:20:00Z",
+      "status": "ready"
+    }
+  }
+}

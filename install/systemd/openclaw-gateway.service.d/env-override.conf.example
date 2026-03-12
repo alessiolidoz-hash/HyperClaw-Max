@@ -1,0 +1,6 @@
+[Service]
+Environment=HYPERCLAW_REPO_ROOT=%h/HyperClaw-Max
+Environment=HYPERCLAW_CONFIG=%h/HyperClaw-Max/config/openclaw.public.example.jsonc
+Environment=OPENCLAW_GATEWAY_NODE=/usr/bin/node
+Environment=OPENCLAW_DIST_ENTRY=%h/.local/share/openclaw/dist/index.js
+Environment=OPENCLAW_GATEWAY_PORT=18789

@@ -1,0 +1,26 @@
+{
+  "delegations": {
+    "PUBLIC-DELEGATION-001": {
+      "id": "PUBLIC-DELEGATION-001",
+      "startedAt": "2026-03-12T12:00:00Z",
+      "status": "accepted",
+      "deliverables": [
+        "reports/PUBLIC-FABRIC-WAVE-1.md"
+      ],
+      "lastCheck": "2026-03-12T12:15:00Z",
+      "lastError": null,
+      "severity": "none",
+      "alertCount": 0,
+      "fromAgent": "main",
+      "toAgent": "codex",
+      "sessionKey": "agent:codex:main",
+      "timeoutSeconds": 1800,
+      "failedAt": null,
+      "lastAlertAt": null,
+      "isTest": false,
+      "lastAlertState": null,
+      "graceSeconds": 300,
+      "dueAt": "2026-03-12T12:30:00Z"
+    }
+  }
+}

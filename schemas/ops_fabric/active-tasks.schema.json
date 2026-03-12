@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hyperclaw-max.local/schemas/ops_fabric/active-tasks.schema.json",
+  "title": "HyperClaw-Max Active Tasks",
+  "type": "object",
+  "required": ["meta", "tasks"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "updatedAt": {
+          "type": ["string", "null"]
+        }
+      },
+      "required": ["updatedAt"]
+    },
+    "tasks": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["id", "status", "summary"],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": ["string", "null"]
+          },
+          "openedAt": {
+            "type": ["string", "null"]
+          },
+          "updatedAt": {
+            "type": ["string", "null"]
+          },
+          "ownerAgent": {
+            "type": ["string", "null"]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "deliverables": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "closure": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

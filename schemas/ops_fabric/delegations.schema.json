@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hyperclaw-max.local/schemas/ops_fabric/delegations.schema.json",
+  "title": "HyperClaw-Max Delegations",
+  "type": "object",
+  "required": ["delegations"],
+  "properties": {
+    "delegations": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["id", "status", "fromAgent", "toAgent"],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "fromAgent": {
+            "type": "string"
+          },
+          "toAgent": {
+            "type": "string"
+          },
+          "sessionKey": {
+            "type": ["string", "null"]
+          },
+          "deliverables": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

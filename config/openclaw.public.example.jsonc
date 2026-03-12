@@ -1,21 +1,41 @@
 {
-  // Public distro example configuration.
-  // This file is intentionally schematic and contains no live values.
-
+  "gateway": {
+    "mode": "gateway",
+    "bind": "127.0.0.1",
+    "port": 18789,
+    "http": {
+      "endpoints": [
+        "local"
+      ]
+    },
+    "auth": {
+      "mode": "token",
+      "token": "${OPENCLAW_GATEWAY_TOKEN}"
+    },
+    "tailscale": {
+      "mode": "optional",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": []
+    }
+  },
   "agents": {
     "defaults": {
       "workspace": "./workspace",
+      "thinkingDefault": "medium",
       "model": {
-        "primary": "openai/gpt-5.4",
+        "primary": "openai/gpt-5.2",
         "fallbacks": [
-          "anthropic/claude-sonnet-4-6"
+          "anthropic-api/claude-sonnet-4-6"
         ]
       },
       "memorySearch": {
         "enabled": true,
         "provider": "local",
         "fallback": "none"
-      }
+      },
+      "maxConcurrent": 1
     },
     "list": [
       {
@@ -40,44 +60,113 @@
       }
     ]
   },
+  "bindings": [],
   "models": {
-    "mode": "merge",
     "providers": {
       "openai": {
         "apiKey": "${OPENAI_API_KEY}"
       },
-      "anthropic": {
+      "anthropic-api": {
         "apiKey": "${ANTHROPIC_API_KEY}"
-      },
-      "ollama": {
-        "baseUrl": "http://127.0.0.1:11434/v1",
-        "api": "openai-chat"
       }
     }
   },
   "channels": {
     "telegram": {
       "enabled": false,
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
       "accounts": {
         "main": {
           "botToken": "${TELEGRAM_BOT_TOKEN}",
           "allowFrom": [
             "${TELEGRAM_OWNER_CHAT_ID}"
-          ]
+          ],
+          "sessionKey": "agent:pa:intake"
         }
+      },
+      "heartbeat": {
+        "enabled": true
+      }
+    },
+    "whatsapp": {
+      "enabled": false,
+      "allowFrom": [
+        "${WHATSAPP_OWNER_ID}"
+      ],
+      "dmPolicy": "allow",
+      "groupPolicy": "manual",
+      "heartbeat": {
+        "enabled": true
       }
     }
   },
-  "publicDistro": {
-    "memoryFabric": {
-      "tier1": true,
-      "tier2": true,
-      "tier3": true,
-      "tier4": true
-    },
-    "repoIntelligence": {
+  "hooks": {
+    "enabled": false,
+    "path": "/hooks",
+    "token": "${OPENCLAW_HOOKS_TOKEN}",
+    "defaultSessionKey": "agent:main:main",
+    "allowRequestSessionKey": false,
+    "allowedSessionKeyPrefixes": [
+      "agent:"
+    ],
+    "transformsDir": "./hooks/transforms",
+    "presets": [],
+    "mappings": [],
+    "gmail": {
       "enabled": false,
-      "adapter": "none"
+      "account": "primary",
+      "watchTopic": "${GMAIL_WATCH_TOPIC}"
     }
+  },
+  "messages": {
+    "ackReactionScope": "owner"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": false,
+    "ownerDisplay": "raw"
+  },
+  "tools": {
+    "profile": "public-core",
+    "web": {
+      "search": true,
+      "fetch": true
+    },
+    "media": {
+      "concurrency": 2
+    },
+    "sessions": {
+      "visibility": "owner"
+    },
+    "message": {
+      "allowCrossContextSend": false
+    },
+    "agentToAgent": {
+      "enabled": true
+    }
+  },
+  "skills": {
+    "load": {
+      "extraDirs": [
+        "./skills"
+      ]
+    },
+    "install": {
+      "nodeManager": "manual"
+    },
+    "entries": {}
+  },
+  "wizard": {
+    "lastRunAt": null,
+    "lastRunVersion": null,
+    "lastRunCommand": null,
+    "lastRunMode": "manual"
+  },
+  "plugins": {
+    "entries": {}
+  },
+  "auth": {
+    "profiles": {}
   }
 }

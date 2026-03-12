@@ -1,6 +1,6 @@
 version: 0
 name: hyperclaw-max-default-pack
-status: skeleton
+status: public-core-beta
 
 required_agents:
   - id: main
@@ -29,3 +29,4 @@ pack_rules:
   - private user identity and routing doctrine are not
   - real secrets are injected post-install
   - private overlay may extend this pack without mutating public core
+  - materialization renders public-safe boots over a clean base install

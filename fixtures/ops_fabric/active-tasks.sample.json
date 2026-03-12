@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "updatedAt": "2026-03-12T12:00:00Z"
+  },
+  "tasks": {
+    "PUBLIC-TASK-001": {
+      "id": "PUBLIC-TASK-001",
+      "kind": "manual",
+      "status": "open",
+      "createdAt": "2026-03-12T12:00:00Z",
+      "openedAt": "2026-03-12T12:00:00Z",
+      "updatedAt": "2026-03-12T12:00:00Z",
+      "ownerAgent": "main",
+      "summary": "Prepare the first public operational-fabric wave",
+      "staleAfterSeconds": 1800,
+      "deliverables": [
+        "reports/PUBLIC-FABRIC-WAVE-1.md"
+      ],
+      "tags": [
+        "ops-fabric",
+        "public-core"
+      ],
+      "targetAgent": "codex",
+      "targetSessionKey": "agent:codex:main",
+      "source": "manual",
+      "dueAt": null,
+      "lastAlertAt": null,
+      "lastWatchdogAt": null,
+      "lastError": null
+    }
+  }
+}

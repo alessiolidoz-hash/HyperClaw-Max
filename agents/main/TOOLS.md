@@ -4,17 +4,21 @@ Dependency expectations:
 - Python 3.11+
 - git
 - rg
-- required connector: at least one configured channel
+- required model path: at least one configured provider
+- optional connector: at least one configured channel
 - optional OpenAI / Anthropic API keys
 - optional local model endpoint
 - optional Tailscale reachability
 - optional repo-intel adapter
 
 Primary public-safe tool surfaces:
+- materialize-pack
+- doctor, privacy-check, validate-config
 - context pack
 - failure clinic
 - baseline and scorecard
 - task and delegation schemas
+- ops-fabric bootstrap, validation, and summary
 - health and validation surfaces
 
 Expected future role:

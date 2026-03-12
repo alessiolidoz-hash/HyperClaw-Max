@@ -22,6 +22,9 @@ jobs:
       - name: Run privacy check
         run: |
           PYTHONPATH=src python3 -m hyperclaw_max.privacy_check --repo .
+      - name: Validate public config
+        run: |
+          PYTHONPATH=src python3 -m hyperclaw_max.runtime_validate config/openclaw.public.example.jsonc
       - name: Run unit tests
         run: |
           PYTHONPATH=src python3 -m unittest discover -s tests -q

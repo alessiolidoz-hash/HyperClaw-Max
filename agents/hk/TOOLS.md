@@ -6,6 +6,7 @@ Primary surfaces:
 - task and delegation state
 - watchdogs
 - validation scripts
+- systemd templates
 
 Suggested dependencies:
 - systemd user services

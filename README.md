@@ -50,9 +50,13 @@ Think of it as **hiring a small autonomous company** — not just prompting a bo
 git clone https://github.com/alessiolidoz-hash/HyperClaw-Max.git
 cd HyperClaw-Max
 
-# Run diagnostics
+# Run diagnostics and materialize a clean public-core target
+TARGET_ROOT=.hyperclaw-max-demo
 PYTHONPATH=src python3 -m hyperclaw_max.doctor --repo .
 PYTHONPATH=src python3 -m hyperclaw_max.privacy_check --repo .
+PYTHONPATH=src python3 -m hyperclaw_max.first_run "$TARGET_ROOT"
+PYTHONPATH=src python3 -m hyperclaw_max.runtime_validate "$TARGET_ROOT/config/openclaw.public.example.jsonc"
+PYTHONPATH=src python3 -m hyperclaw_max.ops_fabric.cli summary --state-dir "$TARGET_ROOT/runtime/state"
 PYTHONPATH=src python3 -m unittest discover -s tests -q
 
 # Test the context intelligence engine
@@ -63,6 +67,8 @@ PYTHONPATH=src python3 -m hyperclaw_max.context_intel.pack "telegram inbound ded
 - ✅ The repo installs as a real Python package
 - ✅ The extracted core works
 - ✅ The privacy boundary is solid
+- ✅ The public core can be materialized on a clean target root
+- ✅ The public config and ops-fabric base validate
 - ✅ The test suite passes
 
 ---
@@ -352,22 +358,24 @@ Under the hood, the target operating model looks like this:
 Hetzner / VPS / Linux host
         |
         +--> systemd user services
-        +--> Tailscale private reachability
-        +--> Telegram first real connector
-        +--> cloud models when needed
-        +--> local endpoint when useful
-        +--> persistent agent pack
+        +--> private network boundary
+        +--> patch-aware gateway control plane
+        +--> model providers + optional local endpoint
+        +--> persistent public-core pack
         +--> memory fabric
         +--> operational fabric
+        +--> hook / connector adapters
+        +--> optional voice / browser line
         `--> optional repo intelligence
 ```
 
 Recommended early shape:
 - one Linux host
-- private access over Tailscale
-- one primary owner channel
+- one private network path
 - one default persistent pack
-- one baseline memory core
+- one baseline memory and diagnostic core
+- one real validation surface
+- connectors enabled only when configured
 
 **Reference deployment already proven in the private system:**
 - **Hetzner CAX31**
@@ -383,6 +391,11 @@ This is why the repo keeps talking about **local-first**:
 - your operations stay inspectable
 - your system is not a black box SaaS
 
+Important packaging truth:
+- the live private body already proves more than the public repo currently ships
+- `HyperClaw-Max` is already real as a package and doc set
+- it is not yet the fully extracted public distro of the live body
+
 ---
 
 ## 🔌 Integrations And Why They Exist
@@ -393,8 +406,16 @@ The integration logic is simple:
 - **Tailscale** gives private remote reachability without exposing the whole stack publicly
 - **Cloud models** give strong performance when the task is hard
 - **Local models** give privacy, cost control, and autonomy
+- **Hooks** give a clean way to bridge email/calendar/drive style ingress
 - **Repo intelligence** gives a structured way to compare and import ideas
 - **Cartesia + Ink** give the voice and call surface
+
+**Reference live surfaces already proven in the private system:**
+- Telegram
+- WhatsApp
+- Gmail / Calendar / Drive hook ingress
+- voice/browser services
+- repo-intel advisory lanes
 
 **Reference voice stack in the private system today:**
 - **Cartesia Sonic 3** for TTS
@@ -402,6 +423,11 @@ The integration logic is simple:
 - **Ink STT** in the voice-call path
 - `voice-broker`, `voice-line-agent`, and `voice-web` as dedicated services
 - `rtc-gateway-proxy` as an extra real-time surface
+
+**Public repo truth right now:**
+- the docs describe these surfaces because they are real in the body
+- the repo already ships the Stage 1 core and trust layer
+- connector, voice, and richer fabric packaging are still an extraction roadmap, not a finished install surface
 
 Each one exists because it solves a specific operational problem, not because it is trendy.
 
@@ -415,7 +441,7 @@ Each one exists because it solves a specific operational problem, not because it
 | Memory | Basic | **5-tier deep fabric** |
 | Operations | Minimal | **Full operational fabric** |
 | Intelligence | Core only | **+ Repo intelligence engine** |
-| Install | DIY | **Guided onboarding** |
+| Install | DIY | **Stage 1 real, full distro install surface in progress** |
 | Discipline | Flexible | **Role-based agent discipline** |
 
 **The difference:** OpenClaw is a powerful base. HyperClaw-Max productizes it into a **richer operating system for autonomous work**.
@@ -463,7 +489,7 @@ HyperClaw-Max wants to help you **operate the whole company around it**.
 
 ---
 
-## 🛠️ Guided Install
+## 🛠️ Phased Install Surface
 
 ### Recommended Baseline
 
@@ -480,29 +506,28 @@ HyperClaw-Max wants to help you **operate the whole company around it**.
 
 ```bash
 # Core
-apt install -y git ripgrep bash
+apt install -y git ripgrep bash curl
 
-# Optional but recommended
-apt install -y gh                    # GitHub CLI
-snap install ollama                  # Local models
+# Useful during setup
+apt install -y jq gh
 ```
 
-### Install Flow (Target)
+### Install Flow
 
 ```mermaid
 graph LR
-    A[1. Clone Repo] --> B[2. Run Setup]
-    B --> C[3. Choose Models]
-    C --> D[4. Connect Tailscale]
-    D --> E[5. Connect Telegram]
-    E --> F[6. Enable Agent Pack]
-    F --> G[7. Run Validation]
-    G --> H[8. Start Working]
+    A[1. Clone Repo] --> B[2. Install Core Deps]
+    B --> C[3. Read Boundaries And Config]
+    C --> D[4. Fill Template Config]
+    D --> E[5. Choose Core Models]
+    E --> F[6. Enable Core Pack]
+    F --> G[7. Run Public-Core Checks]
+    G --> H[8. Add Optional Channels And Adapters]
     
     style H fill:#4ecdc4,stroke:#333,stroke-width:3px
 ```
 
-> **Status:** Steps 1-3 are real today. Steps 4-8 are the roadmap.
+> **Status:** Steps 1-7 describe the current public-core pass. Connector, voice, repo-intel, and richer fabric lanes are still being extracted from the live body.
 
 📖 **See:** [install/ONBOARDING.md](install/ONBOARDING.md)
 
@@ -516,7 +541,9 @@ graph LR
 | [MEMORY-FABRIC.md](docs/MEMORY-FABRIC.md) | 5-tier memory system details |
 | [HOSTING-AND-DEPENDENCIES.md](docs/HOSTING-AND-DEPENDENCIES.md) | Server setup, requirements |
 | [PRIVACY-AND-SECRETS.md](docs/PRIVACY-AND-SECRETS.md) | Privacy boundaries, secrets management |
+| [BOUNDARY-AUDIT.md](docs/BOUNDARY-AUDIT.md) | Current public-safety gate and audit scope |
 | [CLI.md](docs/CLI.md) | Command reference |
+| [OPERATIONAL-FABRIC.md](docs/OPERATIONAL-FABRIC.md) | Public task / delegation / watchdog base |
 | [ROADMAP.md](docs/ROADMAP.md) | What's next |
 | [PACK-MANIFEST.yaml](agents/PACK-MANIFEST.yaml) | Agent definitions |
 | [building-the-brain.md](docs/vision/building-the-brain.md) | Long-form memory fabric narrative |
@@ -526,7 +553,7 @@ graph LR
 
 ## ✅ What's Real Today
 
-### Already Working
+### Already Working In This Repo
 
 | Component | Status |
 |-----------|--------|
@@ -536,15 +563,36 @@ graph LR
 | Test suite | ✅ Real |
 | Privacy boundary docs | ✅ Real |
 | Generic boot drafts | ✅ Real |
+| Public extraction map | ✅ Real |
+| Public config example | ✅ Real |
+| Manual onboarding path | ✅ Real |
+| Gateway unit templates | ✅ Real |
+| Operational-fabric schemas and bootstrap CLI | ✅ Real |
+| Materialize-pack CLI | ✅ Real |
+| First-run bootstrap CLI | ✅ Real |
+| Optional connector templates | ✅ Real |
+| Boundary audit doc and checks | ✅ Real |
 | `doctor` command | ✅ Real |
 | `privacy-check` command | ✅ Real |
+| `validate-config` command | ✅ Real |
+| `ops-fabric` command | ✅ Real |
 | CI workflow | ✅ Real |
 
-### Still In Progress
+### Real In The Live Body, Not Yet Fully Extracted Here
+
+- patch-aware control plane
+- richer operational fabric beyond the public base
+- hook and connector surfaces
+- local and hybrid routing layers
+- voice and browser line
+- Tier 5 compare and sync workflows
+
+### Still In Progress For The Public Distro
 
 - 🔧 Public-safe `query-fusion` shell
-- 🔧 Install and validation scripts
-- 🔧 Richer connector templates
+- 🔧 Dispatch, watchdog, and observability wrappers beyond the public base
+- 🔧 Richer connector automation beyond the shipped templates
+- 🔧 Voice/browser adapter packaging
 - 🔧 Repo-intel adapter contract
 - 🔧 Broader memory backends
 - 🔧 Sector overlays
@@ -562,7 +610,7 @@ graph LR
 
 **This is a public-safe distro.** Your private stack stays private.
 
-📖 **See:** [PRIVACY-AND-SECRETS.md](docs/PRIVACY-AND-SECRETS.md), [BOUNDARIES.md](docs/BOUNDARIES.md)
+📖 **See:** [PRIVACY-AND-SECRETS.md](docs/PRIVACY-AND-SECRETS.md), [BOUNDARIES.md](docs/BOUNDARIES.md), [BOUNDARY-AUDIT.md](docs/BOUNDARY-AUDIT.md)
 
 ---
 

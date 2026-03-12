@@ -1,0 +1,24 @@
+[Unit]
+Description=HyperClaw-Max Gateway
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/HyperClaw-Max
+ExecStartPre=/usr/bin/bash -lc 'cd "${HYPERCLAW_REPO_ROOT}" && PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m hyperclaw_max.runtime_validate "${HYPERCLAW_CONFIG}"'
+ExecStart=/usr/bin/bash -lc '"${OPENCLAW_GATEWAY_NODE}" "${OPENCLAW_DIST_ENTRY}" gateway --port "${OPENCLAW_GATEWAY_PORT}"'
+Restart=always
+RestartSec=5
+KillMode=control-group
+TimeoutStopSec=20
+UMask=0077
+Environment=HOME=%h
+Environment=HYPERCLAW_REPO_ROOT=%h/HyperClaw-Max
+Environment=HYPERCLAW_CONFIG=%h/HyperClaw-Max/config/openclaw.public.example.jsonc
+Environment=OPENCLAW_GATEWAY_NODE=/usr/bin/node
+Environment=OPENCLAW_DIST_ENTRY=%h/.local/share/openclaw/dist/index.js
+Environment=OPENCLAW_GATEWAY_PORT=18789
+
+[Install]
+WantedBy=default.target

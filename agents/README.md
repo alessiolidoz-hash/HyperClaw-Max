@@ -1,14 +1,19 @@
 # Agent Pack
 
-This directory defines the default public persistent-agent pack.
+This directory defines the default public persistent-agent pack and its optional overlays.
 
-Current intent:
-- ship a minimal but real multi-agent working set
-- keep finance/legal as optional overlays
-- keep private personal routing rules out of the public distro
+Current reality:
+- `main`, `codex`, `pa`, and `hk` are the public core pack
+- `finance` and `legal` are optional overlays
+- `hyperclaw-materialize-pack` renders these boots over a clean base install
 
-The agent pack should eventually include:
-- public-safe boot files
-- workspace templates
-- example tasks
-- setup guidance for Telegram and local models
+Boundaries:
+- core pack = required for a credible public install
+- optional overlays = additive, explicit, and disable cleanly
+- private overlay = owner-specific routing, memory, auth, sessions, and doctrine that never ship here
+
+What these files are for:
+- `README.md` explains the lane honestly
+- `AGENTS.md` defines role and guardrails
+- `BOOTSTRAP.md` defines startup checks and degradation rules
+- `TOOLS.md` defines the expected public-safe surfaces for that role

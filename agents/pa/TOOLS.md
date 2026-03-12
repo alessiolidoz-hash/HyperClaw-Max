@@ -2,10 +2,12 @@
 
 Primary surfaces:
 - Telegram connector templates
+- HTTP hook templates
 - intake and escalation patterns
 - task creation hooks
 - lightweight notification logic
 - delivery traceability concepts
+- ops-fabric task state
 
 Suggested dependencies:
 - Telegram bot token

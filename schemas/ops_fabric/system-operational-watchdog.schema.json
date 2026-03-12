@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hyperclaw-max.local/schemas/ops_fabric/system-operational-watchdog.schema.json",
+  "title": "HyperClaw-Max System Operational Watchdog",
+  "type": "object",
+  "required": ["meta", "incidents", "deliverables"],
+  "properties": {
+    "meta": {
+      "type": "object"
+    },
+    "incidents": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["id", "signature", "category", "severity", "summary", "status"],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "signature": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "routes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "deliverables": {
+      "type": "object"
+    }
+  }
+}

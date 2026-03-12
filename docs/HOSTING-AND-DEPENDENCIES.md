@@ -1,76 +1,109 @@
 # Hosting And Dependencies
 
-This file describes the intended early deployment shape for HyperClaw-Max.
+This file describes the intended public deployment shape for HyperClaw-Max, based on the live OpenClaw body but trimmed to a public-safe install surface.
 
-## Suggested Host
+## Baseline Host
 
-Recommended early target:
+Recommended baseline:
 - Hetzner or equivalent VPS
 - ARM64 or x86_64
 - 8 vCPU
 - 16 GB RAM
-- SSD storage
+- 160 GB SSD or equivalent room for logs, fixtures, and optional local-model lanes
 
-Why:
-- enough room for system services
-- enough room for a first local-model lane
-- enough room for logs, fixtures, and memory artifacts
+Why this shape:
+- it already matches a proven reference footprint in the private body
+- it has enough room for gateway, services, tests, and a first adapter lane
+- it can host the public core without forcing a cluster or managed cloud stack
 
-## Suggested Network Shape
+## Recommended Network Shape
 
 Recommended:
-- private reachability with Tailscale
-- no public exposure by default
-- connectors opened only after configuration
+- private reachability with Tailscale or equivalent
+- no broad public exposure by default
+- connectors enabled only after configuration and smoke checks
 
 Why:
-- keeps the product usable while reducing blast radius during setup
+- keeps the distro usable while reducing blast radius during bootstrap
+- fits the local-first, owner-controlled operating model
 
-## Base Software Dependencies
+## Core Runtime Dependencies
 
-Required:
+Required for the public core:
 - Python 3.11+
 - Node 20+
 - `git`
 - `bash`
 - `rg`
-
-Useful:
-- `gh`
 - `curl`
 - `systemctl --user`
 
-Optional:
-- Ollama or another local OpenAI-compatible endpoint
-- OpenAI API key
-- Anthropic API key
+Useful during setup and support:
+- `jq`
+- `gh`
+
+Core provider requirement:
+- at least one working provider path configured in the public config
+
+## Optional Adapter Dependencies
+
+Local / hybrid model lane:
+- local OpenAI-compatible endpoint or equivalent local runtime
+- optional model assets and healthcheck wrappers
+
+Connector lanes:
 - Telegram bot token
+- optional WhatsApp / webhook / OAuth credentials when those adapters are enabled
+- public connector templates are shipped under `install/connectors/`
+
+Voice / browser lane:
+- optional voice provider credentials
+- optional RTC/browser assets and service templates
+
+Repo-intel lane:
+- optional GitHub / repo adapter credentials
+- optional local upstream mirror tooling
 
 ## Dependency Matrix
 
-| Surface | Required | Optional |
+| Surface | Required For Public Core | Optional Adapter Dependencies |
 |---|---|---|
-| Base runtime | Python, Node, git, bash, rg | gh |
-| Connectors | none for dry local use | Telegram, OAuth providers |
+| Base runtime | Python, Node, git, bash, rg, curl, systemd user services | gh, jq |
 | Models | one provider path | local endpoint, hybrid routing |
-| Repo intelligence | none | GitNexus-style adapter |
+| Default pack | public config + workspaces | extra overlays |
+| Connectors | none for dry local use | Telegram, WhatsApp, Gmail/Calendar/Drive hooks |
+| Voice / browser | none | TTS / STT / RTC providers and service shells |
+| Repo intelligence | none | GitNexus-style or equivalent adapter |
 | Hosting | Linux host | Hetzner, Tailscale |
 
-## Connector Strategy
+## Reference Surfaces In The Live Body
 
-Early recommended connector:
-- Telegram first
+The live private system already proves these surfaces:
+- patch-aware gateway and validator flow
+- persistent agents with dedicated workspaces
+- task / delegation / watchdog lanes
+- Telegram plus richer hook ingress
+- local-first and hybrid routing lanes
+- voice/browser services
+- upstream and release advisory sync
 
-Later optional connectors:
-- email/calendar
-- voice
-- repo intelligence
+Important:
+- that does not mean all of these are already extracted here
+- it means the public distro should describe them honestly and package them incrementally
 
-## Runtime Philosophy
+## Deployment Philosophy
 
-HyperClaw-Max should be able to run in three modes:
+HyperClaw-Max should be usable in three increasingly rich modes:
 - cloud-model only
 - local-model assisted
 - hybrid
 
-The public distro should not require every mode to be configured on day one.
+The public distro should not require every mode or every adapter on day one.
+
+A good first install is:
+- one Linux host
+- one provider path
+- one default pack
+- one baseline memory/context surface
+- one materialized target root produced by `hyperclaw-first-run`
+- optional channels and adapters enabled later

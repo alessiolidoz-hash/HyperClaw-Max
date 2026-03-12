@@ -16,6 +16,10 @@ dependencies = []
 [project.scripts]
 hyperclaw-doctor = "hyperclaw_max.doctor:main"
 hyperclaw-privacy-check = "hyperclaw_max.privacy_check:main"
+hyperclaw-validate-config = "hyperclaw_max.runtime_validate:main"
+hyperclaw-ops-fabric = "hyperclaw_max.ops_fabric.cli:main"
+hyperclaw-materialize-pack = "hyperclaw_max.materialize_pack:main"
+hyperclaw-first-run = "hyperclaw_max.first_run:main"
 hyperclaw-symbol-slice = "hyperclaw_max.context_intel.symbol_slice:main"
 hyperclaw-feedback-store = "hyperclaw_max.context_intel.feedback_store:main"
 hyperclaw-context-pack = "hyperclaw_max.context_intel.pack:main"

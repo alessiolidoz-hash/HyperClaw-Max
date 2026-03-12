@@ -14,6 +14,11 @@ Useful:
 - optional OpenAI / Anthropic keys
 
 Core surfaces:
+- `hyperclaw-materialize-pack`
+- `hyperclaw-doctor`
+- `hyperclaw-privacy-check`
+- `hyperclaw-validate-config`
+- `hyperclaw-ops-fabric`
 - package source in `src/`
 - fixtures in `fixtures/`
 - tests in `tests/`
