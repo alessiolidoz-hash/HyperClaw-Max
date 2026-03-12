@@ -37,7 +37,7 @@ This public repo is meant to be:
 - installable from zero
 - honest about what is shipped today
 - extensible through optional adapters
-- usable without access to the reference private deployment
+- usable without any private repo access
 
 <div align="center">
 
@@ -75,7 +75,7 @@ This public repo is meant to be:
 - full voice / browser runtime
 - full Tier 2-Tier 5 runtime extraction
 - repo-intel adapter implementation
-- full gateway parity with the reference deployment
+- full gateway parity
 
 ---
 
@@ -193,7 +193,7 @@ This writes:
 ### 3. Configure The Required Inputs
 
 Edit:
-- `TARGET_ROOT/config/openclaw.public.example.jsonc`
+- `"$TARGET_ROOT/config/openclaw.public.example.jsonc"`
 
 For a real runtime, provide your own values for:
 - `OPENCLAW_GATEWAY_TOKEN`
@@ -224,6 +224,8 @@ python3 -m unittest discover -s tests -q
 ### 5. Add Optional Adapters When Needed
 
 Examples:
+- `hyperclaw-materialize-pack "$TARGET_ROOT" --force`
+- `hyperclaw-materialize-pack "$TARGET_ROOT" --include-optional finance`
 - materialize `finance` or `legal` overlays
 - enable Telegram or HTTP hooks
 - wire systemd templates for the gateway surface
@@ -340,7 +342,7 @@ The public config template assumes a simple provider path first:
 - one fallback model
 - clear env-var based credentials
 
-Local and hybrid routing are part of the architecture and reference deployment, but they are not required for a clean public-core install.
+Local and hybrid routing are part of the architecture and proven operating model, but they are not required for a clean public-core install.
 
 ### Surgical Repo Intelligence
 
