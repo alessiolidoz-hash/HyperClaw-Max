@@ -9,7 +9,7 @@
 **One server. Persistent agents. Layered memory. Surgical operations.**
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge)](LICENSE)
-[![CI](https://github.com/alessiolidoz-hash/HyperClaw-Max/actions/workflows/ci.yml/badge.svg?style=for-the-badge)](https://github.com/alessiolidoz-hash/HyperClaw-Max/actions/workflows/ci.yml)
+[![CI](https://github.com/alessiolidoz-hash/HyperClaw-Max/actions/workflows/ci.yml/badge.svg)](https://github.com/alessiolidoz-hash/HyperClaw-Max/actions/workflows/ci.yml)
 [![Status](https://img.shields.io/badge/status-early%20but%20real-blue?style=for-the-badge)](docs/ROADMAP.md)
 [![Mode](https://img.shields.io/badge/deployment-local--first-black?style=for-the-badge)](docs/HOSTING-AND-DEPENDENCIES.md)
 [![Pack](https://img.shields.io/badge/agents-DOC%20%7C%20CODEX%20%7C%20PA%20%7C%20HK-orange?style=for-the-badge)](agents/PACK-MANIFEST.yaml)
